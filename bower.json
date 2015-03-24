@@ -1,0 +1,23 @@
+{
+  "name": "web-features",
+  "version": "0.0.1",
+  "homepage": "https://github.com/starzou/web-features",
+  "authors": [
+    "StarZou <zoutongyuan@163.com>"
+  ],
+  "description": "know more web-features",
+  "main": "public/index.html",
+  "keywords": [
+    "know",
+    "more",
+    "web-features"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
