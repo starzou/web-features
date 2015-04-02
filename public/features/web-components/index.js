@@ -10,8 +10,10 @@ var AnchorPrototype = Object.create(HTMLElement.prototype);
 
 
 AnchorPrototype.createdCallback = function () {
+    var style = this.style;
     this.textContent = this.attributes.name.textContent + '-' + Date.now();
-    this.style.display = 'block';
+    style.display = 'block';
+    style.color = 'red';
 };
 
 
