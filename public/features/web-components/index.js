@@ -5,7 +5,9 @@
  * @author StarZou
  **/
 
-
+/**
+ *  Custom Elements 使用
+ */
 var AnchorPrototype = Object.create(HTMLElement.prototype);
 
 
@@ -18,3 +20,12 @@ AnchorPrototype.createdCallback = function () {
 
 
 document.registerElement('data-anchor', {prototype: AnchorPrototype});
+
+
+/**
+ * Shadow DOM
+ */
+var tip = document.createElement('div');
+var shadowRoot = tip.createShadowRoot();
+shadowRoot.innerHTML = '<label>Name:</label><input type="text" value="StarZou"/>';
+document.body.appendChild(tip);
