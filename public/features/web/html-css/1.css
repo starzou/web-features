@@ -1,0 +1,36 @@
+body {
+    font-family: Lucida Grande, Lucida Sans, Arial, sans-serif;
+}
+
+.success {
+    text-align: center;
+    color: green;
+    font-size: 20px;
+}
+
+q:after, q:before {
+    color: red;
+}
+
+body > div {
+    border: 0px double red;
+    border-bottom-width: 2px;
+    margin-bottom: 1em;
+}
+
+hr {
+    display: none;
+}
+
+.table, tbody, thead, tr, td, th {
+    border: 1px solid green;
+    border-spacing: 0;
+}
+
+tbody, thead, tr, td, th {
+    padding: 10px;
+}
+
+a:hover {
+    color: green;
+}
