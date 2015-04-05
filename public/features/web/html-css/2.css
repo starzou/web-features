@@ -1,0 +1,13 @@
+body {
+    font-family: Lucida Grande, Lucida Sans, Arial, sans-serif;
+}
+
+.highlight {
+    color: green;
+    font-size: 20px;
+}
+
+.tx {
+    font-weight: bold;
+    color: red;
+}
