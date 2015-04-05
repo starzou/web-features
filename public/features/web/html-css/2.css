@@ -4,10 +4,51 @@ body {
 
 .highlight {
     color: green;
-    font-size: 20px;
+    font-size: 22px;
+    line-height: 2em;
+    border: 1px solid red;
+    text-indent: 2em;
+    word-spacing: 0.66em;
+    letter-spacing: 0.1em;
 }
 
 .tx {
     font-weight: bold;
     color: red;
+    text-decoration: line-through;
+}
+
+div {
+    border: 1px solid red;
+}
+
+.div1 {
+    float: left;
+    width: 30%;
+}
+
+.div2 {
+    float: right;
+}
+
+.div3 {
+    /*clear: both;*/
+}
+
+.div5 {
+    border: 2px solid green;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50px;
+    left: 100px;
+}
+
+.div6 {
+    border: 2px solid green;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
 }
