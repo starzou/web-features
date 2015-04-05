@@ -69,6 +69,15 @@ div {
     left: 50px;
 }
 
+/*
+块状 元素居中
+*/
+.div7 {
+    width: 50%;
+    margin: 30px auto;
+    text-align: center;
+}
+
 .div9 {
     background-color: #00B7FF;
     position: absolute;
