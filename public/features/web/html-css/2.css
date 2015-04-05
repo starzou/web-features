@@ -69,6 +69,13 @@ div {
     left: 50px;
 }
 
+.div9 {
+    background-color: #00B7FF;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
 /*
 fixed：表示固定定位，与absolute定位类型类似，但它的相对移动的坐标是视图（屏幕内的网页窗口）本身。
 由于视图本身是固定的，它不会随浏览器窗口的滚动条滚动而变化，除非你在屏幕中移动浏览器窗口的屏幕位置，
