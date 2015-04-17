@@ -10,3 +10,8 @@
     transform: rotate(360deg);
     background-color: #dd82ff;
 }
+
+.center {
+    text-align: center;
+    margin: 0px auto;
+}
