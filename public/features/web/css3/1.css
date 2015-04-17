@@ -1,0 +1,12 @@
+.title {
+    border: 0px double #00827c;
+    width: 200px;
+    margin: 80px auto;
+    transition: transform 0.67s, background-color 1s;
+    background-color: #308069;
+}
+
+.new-title {
+    transform: rotate(360deg);
+    background-color: #dd82ff;
+}
