@@ -26,25 +26,30 @@
 @-webkit-keyframes showMe {
     0% {
         left: 0;
+        top: 0;
     }
 
     25% {
-        left: 150px;
+        left: 200px;
+        top: 0;
         transform: rotate(360deg);
     }
 
     50% {
-        left: 250px;
+        left: 200px;
+        top: 200px;
         transform: rotate(720deg);
     }
 
     75% {
-        left: 150px;
+        left: 0;
+        top: 200px;
         transform: rotate(360deg);
     }
 
     100% {
         left: 0;
+        top: 0;
         background-color: #800e2d;
         transform: rotate(0deg);
     }
