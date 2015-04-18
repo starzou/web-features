@@ -20,7 +20,7 @@
 }
 
 .animation-title {
-    -webkit-animation: showMe 1s;
+    -webkit-animation: showMe 1s linear 0s infinite alternate;
 }
 
 @-webkit-keyframes showMe {
