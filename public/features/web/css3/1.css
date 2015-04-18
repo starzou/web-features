@@ -5,6 +5,7 @@
     transition: transform 0.67s, background-color 1s, width 0.67s;
     background-color: #308069;
     text-align: center;
+    position: relative;
 }
 
 .new-title {
@@ -23,12 +24,28 @@
 }
 
 @-webkit-keyframes showMe {
-    form {
-
+    0% {
+        left: 0;
     }
 
-    to {
-        background-color: #800e2d;
+    25% {
+        left: 150px;
+        transform: rotate(360deg);
+    }
+
+    50% {
+        left: 250px;
         transform: rotate(720deg);
+    }
+
+    75% {
+        left: 150px;
+        transform: rotate(360deg);
+    }
+
+    100% {
+        left: 0;
+        background-color: #800e2d;
+        transform: rotate(0deg);
     }
 }
