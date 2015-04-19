@@ -1,0 +1,20 @@
+.title {
+    color: #44805a;
+    text-align: center;
+}
+
+.left {
+    float: left;
+}
+
+.aside {
+    min-width: 250px;
+}
+
+.clear-fix {
+    clear: both;
+}
+
+.main {
+    width: 80%;
+}
