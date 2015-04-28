@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="App">
+
+<head>
+    <meta charset="UTF-8">
+    <title>know more web-features</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+
+<body ng-controller="AppController">
+    <header>
+        <h1 ng-bind-html="title"></h1>
+    </header>
+
+    <section>
+        <ng-flow name="f1">
+            <ng-flow name="f1-1"></ng-flow>
+        </ng-flow>
+
+        <ng-flow ng-hide="hide" name="f2"></ng-flow>
+
+        <section>
+            <button ng-click="hide = !hide" ng-bind="'hide : ' + hide"></button>
+        </section>
+
+        <section>
+            <div ng-init="items=['a','b','c','d','e','x']">
+                <input placeholder="filter" ng-model="f"/>
+
+                <div ng-repeat="item in items | filter:f" class="repeat-item">
+                    {{item}}
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <footer>
+
+    </footer>
+
+    <script src="../../bower_components/angular/angular.js"></script>
+    <script src="../../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../../bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
