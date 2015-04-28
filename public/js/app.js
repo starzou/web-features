@@ -19,6 +19,7 @@
     app.directive('ngFlow', [function () {
         return {
             restrict   : 'EA',
+            transclude : true,
             scope      : true,
             templateUrl: 'js/ng-flow.tpl.html',
             controller : ['$scope', '$attrs', function ($scope, $attrs) {
