@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>know more web-features</title>
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
 
 <body ng-controller="AppController">
@@ -16,7 +17,11 @@
             <ng-flow name="f1-1"></ng-flow>
         </ng-flow>
 
-        <ng-flow name="f2"></ng-flow>
+        <ng-flow ng-hide="hide" name="f2"></ng-flow>
+
+        <section>
+            <button ng-click="hide = !hide" ng-bind="'hide : ' + hide"></button>
+        </section>
     </section>
 
     <footer>

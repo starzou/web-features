@@ -16,7 +16,7 @@
     /**
      * 测试ng 指令执行过程
      */
-    app.directive('ngFlow', [function () {
+    app.directive('ngFlow', ['$animate', function ($animate) {
         return {
             restrict   : 'EA',
             transclude : true,
