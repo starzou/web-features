@@ -23,11 +23,9 @@
   "dependencies": {
     "webcomponentsjs": "~0.6.0",
     "semantic-ui": "~1.11.6",
-    "angular-material": "~0.8.3",
     "es6-shim": "~0.27.1",
     "react": "~0.13.1",
-    "angular": "v1.4.0-build.3989",
-    "angular-sanitize": "v1.4.0-build.3989",
-    "angular-animate": "v1.4.0-build.3989"
+    "angular-material": "~0.8.3",
+    "angular-sanitize": "~1.3.15"
   }
 }
