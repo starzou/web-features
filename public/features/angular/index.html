@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css"/>
 </head>
 
-<body ng-controller="AppController">
+<body ng-cloak ng-controller="AppController">
     <header>
         <h1 ng-bind-html="title"></h1>
     </header>
@@ -27,9 +27,7 @@
             <div ng-init="items=['a','b','c','d','e','x']">
                 <input placeholder="filter" ng-model="f"/>
 
-                <div ng-repeat="item in items | filter:f" class="repeat-item">
-                    {{item}}
-                </div>
+                <div ng-repeat="item in items | filter:f" class="repeat-item" ng-bind="item"></div>
             </div>
         </section>
     </section>
