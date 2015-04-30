@@ -54,3 +54,16 @@
         transform: rotate(0deg);
     }
 }
+
+.container {
+    display: flex;
+}
+
+.nav {
+    width: 200px;
+}
+
+.flex-column {
+    -webkit-flex: 1;
+    flex: 1;
+}
