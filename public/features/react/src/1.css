@@ -13,13 +13,13 @@
 
 .nav {
     min-width: 200px;
-    background-color: #1a729f;
+    background-color: #0e8c8c;
 }
 
 .content {
     flex: 1;
     padding: 8px;
-    background-color: #0e8c8c;
+    background-color: #00b5ad;
 }
 
 .layout {
