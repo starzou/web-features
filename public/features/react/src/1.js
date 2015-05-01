@@ -9,7 +9,7 @@ var body = document.body,
     headerDiv = document.getElementById('header'),
     contentDiv = document.getElementById('content');
 
-React.render(<h1>hello world!</h1>, headerDiv);
+React.render(<h1>Hello world!</h1>, headerDiv);
 
 var HobbyBox = React.createClass({
     render: function () {

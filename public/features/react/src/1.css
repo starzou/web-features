@@ -1,0 +1,27 @@
+.header {
+    background-color: #00827c;
+    text-align: center;
+    margin: 8px auto;
+    padding: 2px 0;
+}
+
+.footer {
+    background-color: #009c95;
+    margin: 16px auto;
+    padding: 8px;
+}
+
+.nav {
+    min-width: 200px;
+    background-color: #1a729f;
+}
+
+.content {
+    flex: 1;
+    padding: 8px;
+    background-color: #0e8c8c;
+}
+
+.layout {
+    display: flex;
+}
