@@ -27,6 +27,15 @@
 
             <md-content layout="column" flex class="md-padding">
 
+                <div>
+                    <label>爱好:</label>
+
+                    <div>
+                        <md-checkbox ng-repeat="hobby in hobbies" ng-model="hobby.checked">
+                            <span ng-bind="hobby.label"></span>
+                        </md-checkbox>
+                    </div>
+                </div>
             </md-content>
 
         </div>

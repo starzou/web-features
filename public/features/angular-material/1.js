@@ -12,4 +12,13 @@ app.controller('AppController', ['$scope', '$mdSidenav', function ($scope, $mdSi
     $scope.toggleSidenav = function (menuId) {
         $mdSidenav(menuId).toggle();
     };
+
+    $scope.hobbies = [
+        {label: '唱歌'},
+        {label: 'Code'},
+        {label: '游泳'},
+        {label: '打篮球'},
+        {label: '踢足球'}
+    ];
+
 }]);
