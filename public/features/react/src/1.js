@@ -9,25 +9,9 @@ var body = document.body,
     headerDiv = document.getElementById('header'),
     contentDiv = document.getElementById('content');
 
-React.render(<h1>Hello world!</h1>, headerDiv);
-
-//var HobbyBox = React.createClass({
-//    render: function () {
-//        return (
-//            <div>
-//                <label>爱好：</label>
-//                <select>
-//                    <option>value 1</option>
-//                    <option>value 2</option>
-//                    <option>value 3</option>
-//                </select>
-//            </div>
-//        );
-//    }
-//});
-
-//React.render(<HobbyBox />, contentDiv);
-
+/**
+ * CommentBox
+ */
 var CommentBox = React.createClass({
     render: function () {
         return (
@@ -40,6 +24,9 @@ var CommentBox = React.createClass({
     }
 });
 
+/**
+ * CommentList
+ */
 var CommentList = React.createClass({
     render: function () {
         return (
@@ -51,6 +38,10 @@ var CommentList = React.createClass({
     }
 });
 
+
+/**
+ * CommentForm
+ */
 var CommentForm = React.createClass({
     render: function () {
         return (
@@ -61,6 +52,9 @@ var CommentForm = React.createClass({
     }
 });
 
+/**
+ * Comment
+ */
 var Comment = React.createClass({
     render: function () {
         return (
@@ -78,6 +72,13 @@ var data = [
     {author: "Pete Hunt", text: "This is one comment"},
     {author: "Jordan Walke", text: "This is *another* comment"}
 ];
+
+
+/**
+ * render
+ */
+
+React.render(<h1>Hello world!</h1>, headerDiv);
 
 React.render(
     <CommentBox data={data}/>,
