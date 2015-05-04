@@ -28,8 +28,15 @@ function onListening() {
  */
 var io = require('socket.io')(server);
 
-io.on('connection', function () {
-    console.log('Socket Server Start');
+// 接受客户端连接
+io.on('connection', function (socket) {
+    var id = socket.id;
+
+    console.log('%s connected', id);
+
+    socket.on('disconnect', function () {
+        console.log('%s disconnected', id);
+    });
 });
 
 
