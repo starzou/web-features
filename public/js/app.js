@@ -7,7 +7,7 @@
 (function (window, document) {
     'use strict';
 
-    var app = angular.module('App', ['ngAnimate', 'ngSanitize']);
+    var app = angular.module('App', ['ngAnimate', 'ngSanitize', 'Socket']);
 
     app.controller('AppController', ['$scope', function ($scope) {
         $scope.title = 'know more web-features';

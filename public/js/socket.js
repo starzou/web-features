@@ -7,6 +7,16 @@
 (function (window, document) {
     'use strict';
 
-    var socket = io();
+    var socketModule = angular.module('Socket', []);
+
+    socketModule.provider('socket', function () {
+        this.$get = function () {
+            return io();
+        }
+    });
+
+    socketModule.run(['$rootScope', 'socket', function ($rootScope, socket) {
+        $rootScope.socket = socket;
+    }]);
 
 })(window, document);
