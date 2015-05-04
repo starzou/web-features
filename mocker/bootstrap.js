@@ -23,5 +23,14 @@ function onListening() {
     console.log('Mocker Server Startup, Listening on : %s:%s', host, port);
 }
 
+/**
+ * Socket Server
+ */
+var io = require('socket.io')(server);
+
+io.on('connection', function () {
+    console.log('Socket Server Start');
+});
+
 
 
