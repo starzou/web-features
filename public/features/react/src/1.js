@@ -17,7 +17,7 @@ var CommentBox = React.createClass({
         return (
             <div className="comment-box">
                 <h1>Hello, world! I am a CommentBox.</h1>
-                <CommentList />
+                <CommentList data={this.props.data}/>
                 <CommentForm />
             </div>
         );
@@ -29,10 +29,17 @@ var CommentBox = React.createClass({
  */
 var CommentList = React.createClass({
     render: function () {
+        var commentNodes = this.props.data.map(function (comment) {
+            return (
+                <Comment author={comment.author}>
+                    {comment.text}
+                </Comment>
+            );
+        });
+
         return (
             <div className="comment-list">
-                <Comment author="Pete Hunt">This is one comment</Comment>
-                <Comment author="Jordan Walke">This is *another* comment</Comment>
+                {commentNodes}
             </div>
         );
     }
