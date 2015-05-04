@@ -13,7 +13,13 @@ var body = document.body,
  * CommentBox
  */
 var CommentBox = React.createClass({
-    render: function () {
+    getInitialState: function () {
+        return {
+            date: Date.now(),
+            name: 'CommentBox'
+        };
+    },
+    render         : function () {
         return (
             <div className="comment-box">
                 <h1>Hello, world! I am a CommentBox.</h1>
@@ -23,6 +29,7 @@ var CommentBox = React.createClass({
         );
     }
 });
+
 
 /**
  * CommentList
@@ -59,6 +66,7 @@ var CommentForm = React.createClass({
     }
 });
 
+
 /**
  * Comment
  */
@@ -84,7 +92,6 @@ var data = [
 /**
  * render
  */
-
 React.render(<h1>Hello world!</h1>, headerDiv);
 
 React.render(
