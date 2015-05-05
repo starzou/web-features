@@ -1,16 +1,53 @@
-<div>
-    <form ng-submit="sendMessage(message)">
-        <div>
-            <label>
-                <span>消息 :</span>
-                <input type="text" ng-model="message.content"/>
-            </label>
-        </div>
-        <div>
-            <input type="submit" value="发送"/>
-        </div>
-    </form>
-    <div>
-        <p ng-repeat="message in messages track by $index" ng-bind="message.content"></p>
+<style>
+    .chat-form {
+        height: 500px;
+    }
+
+    .messages {
+        height: 350px;
+        overflow-y: scroll;
+        background-color: lightcyan;
+    }
+
+    .messages ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .message {
+        padding: 5px;
+    }
+
+    .make-area {
+        margin: 10px 0;
+    }
+
+    .title {
+        text-align: center;
+        color: #006600;
+    }
+</style>
+
+<div class="chat-form">
+    <h1 class="title" ng-bind="chatName"></h1>
+
+    <div class="messages">
+        <ul>
+            <li class="message" ng-repeat="message in messages track by $index">
+                <span ng-bind="message.content"></span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="make-area">
+        <form ng-submit="sendMessage(message)" name="chatForm">
+            <div>
+                <label>
+                    <input type="text" ng-model="message.content" required placeholder="输入消息"/>
+                    <input type="submit" value="发送" ng-disabled="chatForm.$invalid"/>
+                </label>
+            </div>
+        </form>
     </div>
 </div>

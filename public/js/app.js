@@ -43,6 +43,13 @@
                         $scope.messages = messages;
                     });
                 });
+
+                // 赋值
+                angular.forEach(['chatName'], function (value) {
+                    if ($attrs[value]) {
+                        $scope[value] = $attrs[value];
+                    }
+                });
             }
         };
     }]);
