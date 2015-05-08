@@ -15,27 +15,27 @@ var body = document.body,
 var CommentBox = React.createClass({
 
     componentDidMount: function () {
-
+        console.log('componentDidMount', arguments);
     },
 
     componentDidUpdate: function () {
-
+        console.log('componentDidUpdate', arguments);
     },
 
     componentWillMount: function () {
-
+        console.log('componentWillMount', arguments);
     },
 
     componentWillReceiveProps: function () {
-
+        console.log('componentWillReceiveProps', arguments);
     },
 
     componentWillUnmount: function () {
-
+        console.log('componentWillUnmount', arguments);
     },
 
     componentWillUpdate: function () {
-
+        console.log('componentWillUpdate', arguments);
     },
 
     getInitialState: function () {
