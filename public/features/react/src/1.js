@@ -145,14 +145,17 @@ var data = [
     {author: "Jordan Walke", text: "This is *another* comment"}
 ];
 
+var titles = [
+    <h1>Hello world!</h1>,
+    <h3>By React.</h3>
+];
 
 /**
  * render
  */
 React.render(
     <div>
-        <h1>Hello world!</h1>
-        <h3>By React.</h3>
+        {titles}
     </div>,
     headerDiv
 );
