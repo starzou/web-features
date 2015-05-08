@@ -19,9 +19,12 @@ var CommentBox = React.createClass({
             name: 'CommentBox'
         };
     },
+    clickMe        : function (event, reactId) {
+        console.log(event, reactId);
+    },
     render         : function () {
         return (
-            <div className="comment-box">
+            <div className="comment-box" onClick={this.clickMe}>
                 <h1>Hello, world! I am a CommentBox.</h1>
                 <CommentList data={this.props.data}/>
                 <CommentForm />
