@@ -149,7 +149,13 @@ var data = [
 /**
  * render
  */
-React.render(<h1>Hello world!</h1>, headerDiv);
+React.render(
+    <div>
+        <h1>Hello world!</h1>
+        <h3>By React.</h3>
+    </div>,
+    headerDiv
+);
 
 React.render(
     <CommentBox data={data}/>,
