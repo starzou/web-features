@@ -64,6 +64,8 @@ var CommentBox = React.createClass({
             descriptionNode.value = '';
             console.log('value : ', value);
         }
+
+        return false;
     },
 
     render: function () {
@@ -72,11 +74,13 @@ var CommentBox = React.createClass({
                 <h1>Hello, world! I am a CommentBox.</h1>
 
                 <div>
-                    <label>
-                        <p>描述 : {this.state.labels.join(' , ')}</p>
-                        <input type="text" placeholder="添加描述" ref="description"/>
-                        <button onClick={this.saveData}>添加</button>
-                    </label>
+                    <form onSubmit={this.saveData}>
+                        <label>
+                            <p>描述 : {this.state.labels.join(' , ')}</p>
+                            <input type="text" placeholder="添加描述" ref="description"/>
+                            <button type="submit">添加</button>
+                        </label>
+                    </form>
                 </div>
 
                 <CommentList data={this.props.data}/>
