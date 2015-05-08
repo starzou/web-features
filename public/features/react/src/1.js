@@ -13,15 +13,57 @@ var body = document.body,
  * CommentBox
  */
 var CommentBox = React.createClass({
+
+    componentDidMount: function () {
+
+    },
+
+    componentDidUpdate: function () {
+
+    },
+
+    componentWillMount: function () {
+
+    },
+
+    componentWillReceiveProps: function () {
+
+    },
+
+    componentWillUnmount: function () {
+
+    },
+
+    componentWillUpdate: function () {
+
+    },
+
     getInitialState: function () {
         return {
-            date: Date.now(),
-            name: 'CommentBox'
+            date  : Date.now(),
+            name  : 'CommentBox',
+            labels: ['帅气']
         };
     },
 
     saveData: function (event, reactId) {
-        console.log(event, reactId);
+        // description component
+        var description = this.refs.description;
+
+        // description DOM Node
+        var descriptionNode = description.getDOMNode();
+
+        // value
+        var value = descriptionNode.value.trim();
+
+        if (value) {
+            var state = this.state;
+            state.labels.push(value);
+            this.setState(state);
+
+            descriptionNode.value = '';
+            console.log('value : ', value);
+        }
     },
 
     render: function () {
@@ -31,9 +73,9 @@ var CommentBox = React.createClass({
 
                 <div>
                     <label>
-                        <span>签名 : </span>
-                        <input type="text"/>
-                        <button onClick={this.saveData}>保存</button>
+                        <p>描述 : {this.state.labels.join(' , ')}</p>
+                        <input type="text" placeholder="添加描述" ref="description"/>
+                        <button onClick={this.saveData}>添加</button>
                     </label>
                 </div>
 
