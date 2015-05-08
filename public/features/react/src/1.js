@@ -164,7 +164,12 @@ React.render(
     headerDiv
 );
 
+var props = {
+    type   : 'CommentBox',
+    version: '1.0.0'
+};
+
 React.render(
-    <CommentBox data={data}/>,
+    <CommentBox data={data} _self={props}/>,
     contentDiv
 );
