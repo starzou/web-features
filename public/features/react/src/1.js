@@ -19,14 +19,26 @@ var CommentBox = React.createClass({
             name: 'CommentBox'
         };
     },
-    clickMe        : function (event, reactId) {
+
+    saveData: function (event, reactId) {
         console.log(event, reactId);
     },
-    render         : function () {
+
+    render: function () {
         return (
-            <div className="comment-box" onClick={this.clickMe}>
+            <div className="comment-box">
                 <h1>Hello, world! I am a CommentBox.</h1>
+
+                <div>
+                    <label>
+                        <span>签名 : </span>
+                        <input type="text"/>
+                        <button onClick={this.saveData}>保存</button>
+                    </label>
+                </div>
+
                 <CommentList data={this.props.data}/>
+
                 <CommentForm />
             </div>
         );
