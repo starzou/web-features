@@ -30,3 +30,12 @@
     background-color: #0092c9;
     padding: 10px;
 }
+
+.comment-list {
+    background-color: #912d2b;
+}
+
+.comment-form {
+    background-color: #006600;
+    margin: 20px 0;
+}
