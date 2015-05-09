@@ -47,4 +47,27 @@ router.post('/users', function (request, response) {
 
 });
 
+/**
+ * 删除用户
+ */
+router.delete('/users/:id', function (request, response) {
+    var id = request.params.id;
+
+    if (!id) {
+        return;
+    }
+
+    db.pool.query('DELETE FROM user WHERE id = ' + id, function (err, result) {
+        if (err) throw err;
+
+        var data = {
+            data   : result,
+            success: true
+        };
+
+        response.send(data);
+    });
+
+});
+
 module.exports = router;

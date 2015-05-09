@@ -27,7 +27,12 @@
      * Users 资源
      */
     nodeModule.factory('Users', ['$resource', function ($resource) {
-        return $resource('users/', null, {});
+        return $resource('users/', null, {
+            'delete': {
+                method: 'DELETE',
+                url   : 'users/:id'
+            }
+        });
     }]);
 
     nodeModule.controller('NodeController', ['$scope', 'Users', function ($scope, Users) {
@@ -72,7 +77,11 @@
          * 删除用户
          */
         $scope.removeUser = function (user) {
-            console.log(user);
+            Users.delete({id: user.id}, function (result) {
+                if (result.success) {
+                    $scope.getUsers();
+                }
+            });
         };
 
         $scope.getUsers();
