@@ -17,9 +17,12 @@
             link       : function ($scope, $element, $attrs) {
                 // 菜单数据
                 $scope.menus = [
-                    {title: '首页', state: 'index'},
+                    {
+                        title: '首页', state: 'index'
+                    },
                     {
                         title   : 'web-features',
+                        state   : 'features',
                         children: [
                             {title: 'Node.js 研究', state: 'features.node'},
                             {title: 'Node MySQL 研究', state: 'features.mysql'}

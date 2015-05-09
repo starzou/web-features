@@ -26,7 +26,7 @@ a {
 }
 
 .nav {
-    min-width: 200px;
+    min-width: 250px;
     background-color: #0e8c8c;
     overflow-y: auto;
 }
