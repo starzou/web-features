@@ -7,7 +7,7 @@
 (function (window, document) {
     'use strict';
 
-    var app = angular.module('App', ['ngAnimate', 'ngSanitize', 'Socket', 'chatForm']);
+    var app = angular.module('App', ['ui.router', 'ngResource', 'ngAnimate', 'ngSanitize', 'Socket', 'chatForm']);
 
     app.controller('AppController', ['$scope', function ($scope) {
         $scope.title = '高性能web研究';
