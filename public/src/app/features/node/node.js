@@ -23,7 +23,21 @@
             });
     }]);
 
-    nodeModule.controller('NodeController', ['$scope', function ($scope) {
+    /**
+     * Users 资源
+     */
+    nodeModule.factory('Users', ['$resource', function ($resource) {
+        return $resource('users/', null, {});
+    }]);
+
+    nodeModule.controller('NodeController', ['$scope', 'Users', function ($scope, Users) {
+
+        // 保存用户
+        $scope.saveUser = function (user) {
+            Users.save(user, function () {
+                console.log(arguments);
+            });
+        };
 
     }]);
 

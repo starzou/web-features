@@ -1,3 +1,42 @@
+<style>
+    .user-form span {
+        display: inline-block;
+        width: 50px;
+    }
+
+    .user-form div {
+        margin: 8px;
+    }
+</style>
+
 <div>
-    <h1>node</h1>
+    <div>
+        <h1>用户注册</h1>
+
+        <form name="userForm" class="user-form" ng-submit="saveUser(user)">
+            <div>
+                <label>
+                    <span>用户名</span>
+                    <input type="text" ng-model="user.name" required/>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <span>密码</span>
+                    <input type="password" ng-model="user.password" required/>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <span>Email</span>
+                    <input type="email" ng-model="user.email" required/>
+                </label>
+            </div>
+
+            <div>
+                <button type="submit" ng-disabled="userForm.$invalid">注册</button>
+            </div>
+
+        </form>
+    </div>
 </div>
