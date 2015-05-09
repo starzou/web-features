@@ -13,7 +13,7 @@
         return {
             restrict   : 'E',
             scope      : true,
-            templateUrl: 'src/common/components/chat-form/chat-form.tpl.html',
+            templateUrl: 'common/components/chat-form/chat-form.tpl.html',
             link       : function ($scope, $element, $attrs) {
                 // socket 对象
                 var socket = $scope.socket;
