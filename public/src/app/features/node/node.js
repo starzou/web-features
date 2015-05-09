@@ -16,10 +16,15 @@
                 url  : '/node',
                 views: {
                     '@': {
-                        templateUrl: 'app/features/node/node.tpl.html'
+                        templateUrl: 'app/features/node/node.tpl.html',
+                        controller : 'NodeController'
                     }
                 }
             });
+    }]);
+
+    nodeModule.controller('NodeController', ['$scope', function ($scope) {
+
     }]);
 
 })(window, document);
