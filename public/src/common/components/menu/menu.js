@@ -7,7 +7,7 @@
 (function (window, document) {
     'use strict';
 
-    var menuModule = angular.module('menu', []);
+    var menuModule = angular.module('components.menu', []);
 
     menuModule.directive('menu', [function () {
         return {

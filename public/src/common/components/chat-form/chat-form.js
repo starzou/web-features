@@ -7,7 +7,7 @@
 (function (window, document) {
     'use strict';
 
-    var chatFormModule = angular.module('chatForm', []);
+    var chatFormModule = angular.module('components.chatForm', []);
 
     chatFormModule.directive('chatForm', [function () {
         return {
