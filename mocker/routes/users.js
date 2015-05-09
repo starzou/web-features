@@ -12,11 +12,16 @@ var router = express.Router();
  * 查询用户
  */
 router.get('/users', function (request, response) {
-    var result = {
-        data   : {},
-        success: true
-    };
-    response.send(result);
+    db.pool.query('SELECT * FROM user', function (err, rows) {
+        if (err) throw err;
+
+        var result = {
+            data   : rows,
+            success: true
+        };
+
+        response.send(result);
+    });
 });
 
 /**
