@@ -15,13 +15,11 @@ a {
 .header {
     background-color: #00827c;
     text-align: center;
-    margin: 8px auto;
     padding: 2px 0;
 }
 
 .footer {
     background-color: #009c95;
-    margin: 16px auto;
     padding: 8px;
 }
 
