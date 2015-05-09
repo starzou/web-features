@@ -7,7 +7,7 @@
 (function (window, document) {
     'use strict';
 
-    var featuresModule = angular.module('features', []);
+    var featuresModule = angular.module('features', ['features.node']);
 
     featuresModule.config(['$stateProvider', function ($stateProvider) {
         $stateProvider
