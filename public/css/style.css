@@ -1,5 +1,4 @@
 body {
-    padding: 50px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -11,4 +10,38 @@ a {
     color: #ffffff;
     background: #69B56D;
     text-shadow: none;
+}
+
+.header {
+    background-color: #00827c;
+    text-align: center;
+    margin: 8px auto;
+    padding: 2px 0;
+}
+
+.footer {
+    background-color: #009c95;
+    margin: 16px auto;
+    padding: 8px;
+}
+
+.nav {
+    min-width: 200px;
+    background-color: #0e8c8c;
+    overflow-y: auto;
+}
+
+.content {
+    flex: 1;
+    padding: 8px;
+    background-color: #00b5ad;
+    overflow-y: auto;
+}
+
+.container {
+    height: 570px;
+}
+
+.layout {
+    display: flex;
 }
