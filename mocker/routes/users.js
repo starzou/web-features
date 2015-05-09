@@ -13,7 +13,9 @@ var router = express.Router();
  */
 router.get('/users', function (request, response) {
     db.pool.query('SELECT * FROM user', function (err, rows) {
-        if (err) throw err;
+        if (err) {
+            console.error(err);
+        }
 
         var result = {
             data   : rows,
@@ -34,16 +36,39 @@ router.post('/users', function (request, response) {
         return;
     }
 
-    db.pool.query('INSERT INTO user SET ?', user, function (err, result) {
-        if (err) throw err;
+    var id = user.id;
+    id && delete user.id;
 
-        var data = {
-            data   : result,
-            success: true
-        };
+    // 更新
+    if (id) {
+        db.pool.query('UPDATE user SET ? WHERE id = ?', [user, id], function (err, result) {
 
-        response.send(data);
-    });
+            if (err) {
+                console.error(err);
+            }
+
+            var data = {
+                data   : result,
+                success: true
+            };
+
+            response.send(data);
+        });
+    } else {
+        db.pool.query('INSERT INTO user SET ?', user, function (err, result) {
+
+            if (err) {
+                console.error(err);
+            }
+
+            var data = {
+                data   : result,
+                success: true
+            };
+
+            response.send(data);
+        });
+    }
 
 });
 
@@ -58,7 +83,10 @@ router.delete('/users/:id', function (request, response) {
     }
 
     db.pool.query('DELETE FROM user WHERE id = ' + id, function (err, result) {
-        if (err) throw err;
+
+        if (err) {
+            console.error(err);
+        }
 
         var data = {
             data   : result,
