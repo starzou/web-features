@@ -34,7 +34,8 @@
             </div>
 
             <div>
-                <button type="submit" ng-disabled="userForm.$invalid">注册</button>
+                <button type="submit" ng-disabled="userForm.$invalid">保存</button>
+                <button type="button" ng-click="resetForm()">重置</button>
             </div>
 
         </form>
@@ -47,6 +48,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>E-mail</th>
+                    <th>Settings</th>
                 </tr>
             </thead>
             <tbody>
@@ -54,6 +56,10 @@
                     <td ng-bind="user.id"></td>
                     <td ng-bind="user.name"></td>
                     <td ng-bind="user.email"></td>
+                    <td>
+                        <i class="edit icon" ng-click="editUser(user)"></i>
+                        <i class="remove icon" ng-click="removeUser(user)"></i>
+                    </td>
                 </tr>
             </tbody>
         </table>

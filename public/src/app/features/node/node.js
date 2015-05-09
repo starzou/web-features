@@ -33,13 +33,20 @@
     nodeModule.controller('NodeController', ['$scope', 'Users', function ($scope, Users) {
 
         /**
+         * 重置表单
+         */
+        $scope.resetForm = function () {
+            delete $scope.user;
+        };
+
+        /**
          * 保存用户
          * @param user
          */
         $scope.saveUser = function (user) {
             Users.save(user, function (result) {
                 if (result.success) {
-                    delete $scope.user;
+                    $scope.resetForm();
                     $scope.getUsers();
                 }
             });
@@ -52,6 +59,20 @@
             Users.get(function (result) {
                 $scope.users = result.data;
             });
+        };
+
+        /**
+         * 编辑用户
+         */
+        $scope.editUser = function (user) {
+            $scope.user = angular.copy(user);
+        };
+
+        /**
+         * 删除用户
+         */
+        $scope.removeUser = function (user) {
+            console.log(user);
         };
 
         $scope.getUsers();
