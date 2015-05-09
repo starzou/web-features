@@ -39,4 +39,23 @@
 
         </form>
     </div>
+
+    <div>
+        <table class="ui table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>E-mail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="user in users track by $index">
+                    <td ng-bind="user.id"></td>
+                    <td ng-bind="user.name"></td>
+                    <td ng-bind="user.email"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

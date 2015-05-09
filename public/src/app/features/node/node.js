@@ -32,14 +32,29 @@
 
     nodeModule.controller('NodeController', ['$scope', 'Users', function ($scope, Users) {
 
-        // 保存用户
+        /**
+         * 保存用户
+         * @param user
+         */
         $scope.saveUser = function (user) {
             Users.save(user, function (result) {
                 if (result.success) {
                     delete $scope.user;
+                    $scope.getUsers();
                 }
             });
         };
+
+        /**
+         * 查询用户
+         */
+        $scope.getUsers = function () {
+            Users.get(function (result) {
+                $scope.users = result.data;
+            });
+        };
+
+        $scope.getUsers();
 
     }]);
 
