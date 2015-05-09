@@ -34,8 +34,10 @@
 
         // 保存用户
         $scope.saveUser = function (user) {
-            Users.save(user, function () {
-                console.log(arguments);
+            Users.save(user, function (result) {
+                if (result.success) {
+                    delete $scope.user;
+                }
             });
         };
 

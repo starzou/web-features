@@ -19,4 +19,27 @@ router.get('/users', function (request, response) {
     response.send(result);
 });
 
+/**
+ * 用户注册
+ */
+router.post('/users', function (request, response) {
+    var user = request.body;
+
+    if (!user) {
+        return;
+    }
+
+    db.pool.query('INSERT INTO user SET ?', user, function (err, result) {
+        if (err) throw err;
+
+        var data = {
+            data   : result,
+            success: true
+        };
+
+        response.send(data);
+    });
+
+});
+
 module.exports = router;
