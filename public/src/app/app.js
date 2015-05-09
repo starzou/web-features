@@ -7,7 +7,7 @@
 (function (window, document) {
     'use strict';
 
-    var app = angular.module('App', ['ui.router', 'ngResource', 'ngAnimate', 'ngSanitize', 'Socket', 'components.chatForm', 'components.menu', 'directives.patcher', 'index', 'features']);
+    var app = angular.module('App', ['ui.router', 'ngResource', 'ngMaterial', 'ngAnimate', 'ngSanitize', 'Socket', 'components.chatForm', 'components.menu', 'directives.patcher', 'index', 'features']);
 
     /**
      * App 配置, 用来做一些服务的配置
@@ -25,8 +25,16 @@
     /**
      * AppController
      */
-    app.controller('AppController', ['$scope', function ($scope) {
+    app.controller('AppController', ['$scope', '$mdSidenav', function ($scope, $mdSidenav) {
         $scope.title = '高性能web研究';
+
+        /**
+         * 展开侧边栏
+         * @param menuId
+         */
+        $scope.toggleSidenav = function (menuId) {
+            $mdSidenav(menuId).toggle();
+        };
     }]);
 
 })(window, document);
