@@ -1,7 +1,12 @@
 <style>
     .menus {
-        list-style-type: decimal;
+        list-style-type: none;
         padding: 8px 0;
+    }
+
+    .sub-menus {
+        list-style-type: none;
+        padding: 0 20px;
     }
 
     .menus li {
@@ -18,7 +23,5 @@
 </style>
 
 <ul class="menus">
-    <li ng-repeat="menu in menus track by $index" ui-sref-active="active">
-        <a ui-sref="{{menu.state}}" ui-sref-opts="{reload: true}" ng-bind="menu.title"></a>
-    </li>
+    <menu-node ng-repeat="menu in menus track by $index" menu="menu"></menu-node>
 </ul>
