@@ -12,8 +12,8 @@
     indexModule.config(['$stateProvider', function ($stateProvider) {
         $stateProvider
             .state('index', {
-                url     : '/',
-                template: '<div>hello world</div>'
+                url        : '/',
+                templateUrl: 'app/index/index.tpl.html'
             });
     }]);
 

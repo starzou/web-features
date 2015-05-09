@@ -8,13 +8,17 @@
         margin: 8px 0;
     }
 
+    .menus .active {
+        background-color: #fdcfcf;
+    }
+
     .menus a {
         text-decoration: none;
     }
 </style>
 
 <ul class="menus">
-    <li ng-repeat="menu in menus track by $index">
+    <li ng-repeat="menu in menus track by $index" ui-sref-active="active">
         <a ui-sref="{{menu.state}}" ui-sref-opts="{reload: true}" ng-bind="menu.title"></a>
     </li>
 </ul>
