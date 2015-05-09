@@ -13,3 +13,7 @@ var app = bootstrap.app;
 // 装载 socket io server
 var socket = require('../lib/socket.io/socket');
 socket.init(server);
+
+var db = require('../lib/mysql/db');
+// 放入全局变量中
+global.db = db;
