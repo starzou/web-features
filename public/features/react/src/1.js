@@ -17,13 +17,12 @@ var Timer = React.createClass({
         };
     },
 
+    updateTime: function () {
+        this.setState({time: new Date()});
+    },
+
     componentDidMount: function () {
-        var self = this;
-
-        this.timer = setInterval(function () {
-            self.setState({time: new Date()});
-        }, 1000);
-
+        this.timer = setInterval(this.updateTime, 1000);
     },
 
     componentWillUnmount: function () {
@@ -243,6 +242,7 @@ var props = {
     version: '1.0.0'
 };
 
+// 传参数方式
 React.render(
     <CommentBox data={data} {...props}/>,
     contentDiv
