@@ -76,7 +76,7 @@ var CommentBox = React.createClass({
     render: function () {
         return (
             <div className="comment-box">
-                <h1>Hello, world! I am a CommentBox.</h1>
+                <h1 style={{color: '#9E0E76', fontSize: '26px'}}>Hello, world! I am a CommentBox.</h1>
 
                 <CommentInput />
 
