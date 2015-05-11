@@ -9,6 +9,33 @@ var body = document.body,
     headerDiv = document.getElementById('header'),
     contentDiv = document.getElementById('content');
 
+var Timer = React.createClass({
+
+    getInitialState: function () {
+        return {
+            time: new Date()
+        };
+    },
+
+    componentDidMount: function () {
+        var self = this;
+
+        this.timer = setInterval(function () {
+            self.setState({time: new Date()});
+        }, 1000);
+
+    },
+
+    componentWillUnmount: function () {
+        clearInterval(this.timer);
+    },
+
+    render: function () {
+        return (<span>{this.state.time.toLocaleString()}</span>);
+    }
+
+});
+
 /**
  * CommentBox
  */
@@ -202,6 +229,7 @@ var titles = [
 React.render(
     <div>
         {titles}
+        <Timer />
     </div>,
     headerDiv
 );
