@@ -25,6 +25,8 @@ var TimerMixin = {
 
 var Timer = React.createClass({
 
+    mixins: [TimerMixin],
+
     getInitialState: function () {
         return {
             time: new Date()
@@ -36,11 +38,7 @@ var Timer = React.createClass({
     },
 
     componentDidMount: function () {
-        this.timer = setInterval(this.updateTime, 1000);
-    },
-
-    componentWillUnmount: function () {
-        clearInterval(this.timer);
+        this.setInterval(this.updateTime, 1000);
     },
 
     render: function () {
