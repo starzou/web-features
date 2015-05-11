@@ -92,10 +92,23 @@ var CommentBox = React.createClass({
         };
     },
 
+    selectFruit: function (event) {
+        this.setState({fruit: event.target.value});
+    },
+
     render: function () {
         return (
             <div className="comment-box">
                 <h1 style={{color: '#9E0E76', fontSize: '26px'}}>Hello, world! I am a CommentBox.</h1>
+
+                <div>
+                    <span>你喜爱的水果 : {this.state.fruit}</span>
+                    <select value={this.state.fruit} onChange={this.selectFruit}>
+                        <option value="apple">Apple</option>
+                        <option value="banana">Banana</option>
+                        <option value="cranberry">Cranberry</option>
+                    </select>
+                </div>
 
                 <CommentInput />
 
