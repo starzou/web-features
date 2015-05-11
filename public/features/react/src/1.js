@@ -9,6 +9,20 @@ var body = document.body,
     headerDiv = document.getElementById('header'),
     contentDiv = document.getElementById('content');
 
+var TimerMixin = {
+    setInterval: function () {
+        this.intervals.push(setInterval.apply(null, arguments));
+    },
+
+    componentDidMount: function () {
+        this.intervals = [];
+    },
+
+    componentWillUnmount: function () {
+        this.intervals.map(clearInterval);
+    }
+};
+
 var Timer = React.createClass({
 
     getInitialState: function () {
