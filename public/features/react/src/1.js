@@ -139,9 +139,9 @@ var CommentInput = React.createClass({
  */
 var CommentList = React.createClass({
     render: function () {
-        var commentNodes = this.props.data.map(function (comment) {
+        var commentNodes = this.props.data.map(function (comment, index) {
             return (
-                <Comment author={comment.author}>
+                <Comment key={index} author={comment.author}>
                     {comment.text}
                 </Comment>
             );
@@ -192,8 +192,8 @@ var data = [
 ];
 
 var titles = [
-    <h1>Hello world!</h1>,
-    <h3>By React.</h3>
+    <h1 key="1">Hello world!</h1>,
+    <h3 key="2">By React.</h3>
 ];
 
 /**
