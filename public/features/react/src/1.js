@@ -18,6 +18,10 @@ var TimerMixin = {
         this.intervals = [];
     },
 
+    componentDidUpdate: function () {
+        //console.log('Timer : componentDidUpdate', arguments);
+    },
+
     componentWillUnmount: function () {
         this.intervals.map(clearInterval);
     }
