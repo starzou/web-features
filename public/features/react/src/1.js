@@ -15,27 +15,27 @@ var body = document.body,
 var CommentBox = React.createClass({
 
     componentDidMount: function () {
-        console.log('componentDidMount', arguments);
+        console.log('CommentBox : componentDidMount', arguments);
     },
 
     componentDidUpdate: function () {
-        console.log('componentDidUpdate', arguments);
+        console.log('CommentBox : componentDidUpdate', arguments);
     },
 
     componentWillMount: function () {
-        console.log('componentWillMount', arguments);
+        console.log('CommentBox : componentWillMount', arguments);
     },
 
     componentWillReceiveProps: function () {
-        console.log('componentWillReceiveProps', arguments);
+        console.log('CommentBox : componentWillReceiveProps', arguments);
     },
 
     componentWillUnmount: function () {
-        console.log('componentWillUnmount', arguments);
+        console.log('CommentBox : componentWillUnmount', arguments);
     },
 
     componentWillUpdate: function () {
-        console.log('componentWillUpdate', arguments);
+        console.log('CommentBox : componentWillUpdate', arguments);
     },
 
     getInitialState: function () {
@@ -62,6 +62,30 @@ var CommentBox = React.createClass({
 });
 
 var CommentInput = React.createClass({
+    componentDidMount: function () {
+        console.log('CommentInput : componentDidMount', arguments);
+    },
+
+    componentDidUpdate: function () {
+        console.log('CommentInput : componentDidUpdate', arguments);
+    },
+
+    componentWillMount: function () {
+        console.log('CommentInput : componentWillMount', arguments);
+    },
+
+    componentWillReceiveProps: function () {
+        console.log('CommentInput : componentWillReceiveProps', arguments);
+    },
+
+    componentWillUnmount: function () {
+        console.log('CommentInput : componentWillUnmount', arguments);
+    },
+
+    componentWillUpdate: function () {
+        console.log('CommentInput : componentWillUpdate', arguments);
+    },
+
     getInitialState: function () {
         return {
             labels: ['帅气'],
