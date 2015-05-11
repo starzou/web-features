@@ -94,6 +94,8 @@ var CommentInput = React.createClass({
     },
 
     saveData: function (event, reactId) {
+        event.preventDefault();
+
         // description component
         var description = this.refs.description;
 
@@ -110,8 +112,6 @@ var CommentInput = React.createClass({
 
             console.log('value : ', value);
         }
-
-        return false;
     },
 
     inputText: function (event) {
