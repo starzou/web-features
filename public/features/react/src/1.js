@@ -88,14 +88,28 @@ var CommentBox = React.createClass({
         return {
             date  : Date.now(),
             name  : 'CommentBox',
-            labels: ['帅气']
+            labels: ['帅气'],
+            fruits: []
         };
     },
 
     selectFruit: function (event) {
-        var value = event.target.value;
-        if (value) {
-            this.setState({fruit: value});
+        var selectedOptions = event.target.selectedOptions;
+
+        var fruits, index, length;
+
+        if (selectedOptions.length) {
+
+            fruits = [];
+            index = 0;
+            length = selectedOptions.length;
+
+            for (; index < length; index++) {
+                var value = selectedOptions[index].value;
+                value && fruits.push(value);
+            }
+
+            this.setState({fruits: fruits});
         }
     },
 
@@ -105,8 +119,8 @@ var CommentBox = React.createClass({
                 <h1 style={{color: '#9E0E76', fontSize: '26px'}}>Hello, world! I am a CommentBox.</h1>
 
                 <div>
-                    <span>你喜爱的水果 : {this.state.fruit}</span>
-                    <select value={this.state.fruit} onChange={this.selectFruit}>
+                    <span>你喜爱的水果 : {this.state.fruits.join(',')}</span>
+                    <select multiple={true} value={this.state.fruits} onChange={this.selectFruit}>
                         <option value="">请选择</option>
                         <option value="apple">Apple</option>
                         <option value="banana">Banana</option>
