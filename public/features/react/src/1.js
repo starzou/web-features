@@ -46,6 +46,29 @@ var CommentBox = React.createClass({
         };
     },
 
+    render: function () {
+        return (
+            <div className="comment-box">
+                <h1>Hello, world! I am a CommentBox.</h1>
+
+                <CommentInput />
+
+                <CommentList data={this.props.data}/>
+
+                <CommentForm />
+            </div>
+        );
+    }
+});
+
+var CommentInput = React.createClass({
+    getInitialState: function () {
+        return {
+            labels: ['帅气'],
+            text  : ''
+        };
+    },
+
     saveData: function (event, reactId) {
         // description component
         var description = this.refs.description;
@@ -57,35 +80,30 @@ var CommentBox = React.createClass({
         var value = descriptionNode.value.trim();
 
         if (value) {
-            var state = this.state;
-            state.labels.push(value);
-            this.setState(state);
+            var newLabels = this.state.labels.concat([value]);
 
-            descriptionNode.value = '';
+            this.setState({labels: newLabels, text: ''});
+
             console.log('value : ', value);
         }
 
         return false;
     },
 
+    inputText: function (event) {
+        this.setState({text: event.target.value});
+    },
+
     render: function () {
         return (
-            <div className="comment-box">
-                <h1>Hello, world! I am a CommentBox.</h1>
-
-                <div>
-                    <form onSubmit={this.saveData}>
-                        <label>
-                            <p>描述 : {this.state.labels.join(' , ')}</p>
-                            <input type="text" placeholder="添加描述" ref="description"/>
-                            <button type="submit">添加</button>
-                        </label>
-                    </form>
-                </div>
-
-                <CommentList data={this.props.data}/>
-
-                <CommentForm />
+            <div>
+                <form onSubmit={this.saveData}>
+                    <label>
+                        <p>描述 : {this.state.labels.join(' , ')}</p>
+                        <input type="text" value={this.state.text} onChange={this.inputText} placeholder="添加描述" ref="description"/>
+                        <button type="submit">添加</button>
+                    </label>
+                </form>
             </div>
         );
     }
