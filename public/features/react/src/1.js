@@ -46,7 +46,11 @@ var Timer = React.createClass({
     },
 
     render: function () {
-        return (<span>{this.state.time.toLocaleString()}</span>);
+        return (
+            <div>
+                <span>{this.state.time.toLocaleString()}</span>
+            </div>
+        );
     }
 
 });
