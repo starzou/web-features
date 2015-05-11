@@ -218,8 +218,12 @@ var data = [
     {author: "Jordan Walke", text: "This is *another* comment"}
 ];
 
+var titleTexts = {
+    2: '<'
+};
+
 var titles = [
-    <h1 key="1">Hello world!</h1>,
+    <h1 key="1">Hello &middot; {titleTexts[2]} world!</h1>,
     <h3 key="2">By React.</h3>
 ];
 
@@ -240,6 +244,6 @@ var props = {
 };
 
 React.render(
-    <CommentBox data={data} _self={props}/>,
+    <CommentBox data={data} {...props}/>,
     contentDiv
 );
