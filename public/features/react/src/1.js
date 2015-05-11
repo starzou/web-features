@@ -93,7 +93,10 @@ var CommentBox = React.createClass({
     },
 
     selectFruit: function (event) {
-        this.setState({fruit: event.target.value});
+        var value = event.target.value;
+        if (value) {
+            this.setState({fruit: value});
+        }
     },
 
     render: function () {
@@ -104,6 +107,7 @@ var CommentBox = React.createClass({
                 <div>
                     <span>你喜爱的水果 : {this.state.fruit}</span>
                     <select value={this.state.fruit} onChange={this.selectFruit}>
+                        <option value="">请选择</option>
                         <option value="apple">Apple</option>
                         <option value="banana">Banana</option>
                         <option value="cranberry">Cranberry</option>
@@ -169,7 +173,7 @@ var CommentInput = React.createClass({
 
             this.setState({labels: newLabels, text: ''});
 
-            console.log('value : ', value);
+            console.log('value : %s , reactId : %s', value, reactId);
         }
     },
 
