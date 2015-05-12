@@ -37,6 +37,12 @@ var Timer = React.createClass({
         };
     },
 
+    getDefaultProps: function () {
+        return {
+            startTime: new Date()
+        };
+    },
+
     updateTime: function () {
         this.setState({time: new Date()});
     },
@@ -48,7 +54,9 @@ var Timer = React.createClass({
     render: function () {
         return (
             <div>
-                <span>{this.state.time.toLocaleString()}</span>
+                <span>启动时间 : {this.props.startTime.toLocaleString()}</span>
+                <br/>
+                <span>当前时间 : {this.state.time.toLocaleString()}</span>
             </div>
         );
     }
