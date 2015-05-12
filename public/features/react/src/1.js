@@ -54,6 +54,7 @@ var Timer = React.createClass({
     render: function () {
         return (
             <div>
+                {this.props.children}
                 <span>启动时间 : {this.props.startTime.toLocaleString()}</span>
                 <br/>
                 <span>当前时间 : {this.state.time.toLocaleString()}</span>
@@ -291,7 +292,9 @@ var titles = [
 React.render(
     <div>
         {titles}
-        <Timer />
+        <Timer>
+            <h3>Timer组件</h3>
+        </Timer>
     </div>,
     headerDiv
 );
