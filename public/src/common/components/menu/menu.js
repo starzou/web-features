@@ -9,35 +9,24 @@
 
     var menuModule = angular.module('components.menu', []);
 
-    menuModule.directive('menu', [function () {
+    /**
+     * Menus 资源
+     */
+    menuModule.factory('Menus', ['$resource', function ($resource) {
+        return $resource('menus/', null, {});
+    }]);
+
+    menuModule.directive('menu', ['Menus', function (Menus) {
         return {
             restrict   : 'E',
             scope      : true,
             templateUrl: 'common/components/menu/menu.tpl.html',
             link       : function ($scope, $element, $attrs) {
 
-                // 菜单数据
-                $scope.menus = [
-                    {
-                        title: '首页', state: 'index'
-                    },
-                    {
-                        title   : 'Web features',
-                        state   : 'features',
-                        children: [
-                            {title: 'Node.js 研究', state: 'features.node'},
-                            {title: 'Node MySQL 研究', state: 'features.mysql'}
-                        ]
-                    },
-                    {
-                        title   : 'Demos',
-                        state   : 'demos',
-                        children: [
-                            {title: 'Todo App', state: 'demos.todo'},
-                            {title: 'Chat Room', state: 'demos.chat'}
-                        ]
-                    }
-                ];
+                // 查询 菜单数据
+                Menus.get(function (result) {
+                    $scope.menus = result.data;
+                });
 
             }
         };
