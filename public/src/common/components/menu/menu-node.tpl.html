@@ -1,5 +1,5 @@
 <li ui-sref-active="active">
-    <a ui-sref="{{menu.state}}" ui-sref-opts="{reload: true}">
+    <a title="{{menu.title}}" ui-sref="{{menu.state}}" ui-sref-opts="{reload: true}">
         <span ng-bind="menu.title"></span>
     </a>
     <ul class="sub-menus" ng-if="menu.children.length > 0">

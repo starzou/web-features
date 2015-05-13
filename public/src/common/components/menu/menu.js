@@ -15,20 +15,30 @@
             scope      : true,
             templateUrl: 'common/components/menu/menu.tpl.html',
             link       : function ($scope, $element, $attrs) {
+
                 // 菜单数据
                 $scope.menus = [
                     {
                         title: '首页', state: 'index'
                     },
                     {
-                        title   : 'web-features',
+                        title   : 'Web features',
                         state   : 'features',
                         children: [
                             {title: 'Node.js 研究', state: 'features.node'},
                             {title: 'Node MySQL 研究', state: 'features.mysql'}
                         ]
+                    },
+                    {
+                        title   : 'Demos',
+                        state   : 'demos',
+                        children: [
+                            {title: 'Todo App', state: 'demos.todo'},
+                            {title: 'Chat Room', state: 'demos.chat'}
+                        ]
                     }
                 ];
+
             }
         };
     }]);
