@@ -22,19 +22,48 @@
         $resourceProvider.defaults.stripTrailingSlashes = false;
     }]);
 
+    // app 配置
+    app.run(['$rootScope', '$mdSidenav', function ($rootScope, $mdSidenav) {
+        $rootScope.componentId = 'left';
+
+        /**
+         * toggle侧边栏
+         * @param componentId
+         */
+        $rootScope.toggleSideNav = function (componentId) {
+            $mdSidenav(componentId || $rootScope.componentId).toggle();
+        };
+
+        /**
+         * 打开侧边栏
+         * @param componentId
+         */
+        $rootScope.openSideNav = function (componentId) {
+            $mdSidenav(componentId || $rootScope.componentId).open();
+        };
+
+        /**
+         * 关闭侧边栏
+         * @param componentId
+         */
+        $rootScope.closeSideNav = function (componentId) {
+            $mdSidenav(componentId || $rootScope.componentId).close();
+        };
+
+        /**
+         * 路由成功, 关闭侧边栏
+         */
+        $rootScope.$on('$stateChangeStart', function (event, self) {
+            $rootScope.closeSideNav();
+        });
+
+    }]);
+
     /**
      * AppController
      */
-    app.controller('AppController', ['$scope', '$mdSidenav', function ($scope, $mdSidenav) {
+    app.controller('AppController', ['$scope', function ($scope) {
         $scope.title = '高性能web研究';
-
-        /**
-         * 展开侧边栏
-         * @param menuId
-         */
-        $scope.toggleSidenav = function (menuId) {
-            $mdSidenav(menuId).toggle();
-        };
     }]);
 
 })(window, document);
