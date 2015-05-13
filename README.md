@@ -18,6 +18,10 @@ $ npm install && bower install
 ```bash  
 $ npm start
 ```
+## Visit the website
+```
+127.0.0.1:9000
+```
 
 ## License
 Copyright (c) 2014 StarZou. Licensed under the MIT license.
