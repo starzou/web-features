@@ -20,7 +20,7 @@ $ npm start
 ```
 ## Visit the website
 ```
-127.0.0.1:9000
+http://127.0.0.1:9000
 ```
 
 ## License
