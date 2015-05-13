@@ -69,6 +69,9 @@ var Timer = React.createClass({
  */
 var CommentBox = React.createClass({
 
+    // 实现双向绑定
+    mixins: [React.addons.LinkedStateMixin],
+
     componentDidMount: function () {
         console.log('CommentBox : componentDidMount', arguments);
     },
@@ -98,6 +101,7 @@ var CommentBox = React.createClass({
             date  : Date.now(),
             name  : 'CommentBox',
             labels: ['帅气'],
+            title : 'Hello, world! I am a CommentBox.',
             fruits: []
         };
     },
@@ -125,7 +129,8 @@ var CommentBox = React.createClass({
     render: function () {
         return (
             <div className="comment-box">
-                <h1 style={{color: '#9E0E76', fontSize: '26px'}}>Hello, world! I am a CommentBox.</h1>
+                <h1 style={{color: '#9E0E76', fontSize: '26px'}}>{this.state.title}</h1>
+                <input type="text" valueLink={this.linkState('title')}/>
 
                 <div>
                     <span>你喜爱的水果 : {this.state.fruits.join(',')}</span>
