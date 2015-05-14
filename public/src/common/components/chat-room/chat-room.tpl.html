@@ -56,7 +56,7 @@
                     <a class="author" ng-bind="message.anchor.userName"></a>
 
                     <div class="metadata">
-                        <span class="date" ng-bind="message.date"></span>
+                        <span class="date" ng-bind="message.date | date:'yyyy-MM-dd HH:mm:ss'"></span>
                     </div>
 
                     <div class="text" ng-bind="message.content"></div>
