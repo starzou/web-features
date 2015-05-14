@@ -44,7 +44,7 @@
 
     <!-- chatForm -->
     <div ng-show="place !== 'loginForm'" class="ui minimal comments">
-        <h3 class="ui header title" ng-bind="name"></h3>
+        <h3 class="ui header title" ng-bind="name + (user.userName ? '-用户:(' + user.userName + ')' :'')"></h3>
 
         <div class="messages">
             <div class="comment" ng-repeat="message in messages track by $index">

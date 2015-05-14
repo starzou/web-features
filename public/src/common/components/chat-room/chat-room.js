@@ -56,6 +56,7 @@
                     $scope.$apply(function () {
 
                         var registered = $scope.registered = result.registered;
+                        $scope.user = result.user;
 
                         // 没有注册
                         if (!registered) {
