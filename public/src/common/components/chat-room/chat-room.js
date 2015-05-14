@@ -74,6 +74,11 @@
 
                     });
                 });
+
+                // 进行登录
+                $scope.login = function (user) {
+                    socket.emit('message:login', user);
+                };
             }
         };
     }]);

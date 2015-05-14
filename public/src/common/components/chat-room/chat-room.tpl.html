@@ -12,81 +12,111 @@
     }
 </style>
 
-<div class="ui minimal comments">
-    <h3 class="ui header title" ng-bind="name"></h3>
+<div>
+    <div>
+        <form class="ui form" name="loginForm" ng-submit="login(user)">
+            <h4 class="ui dividing header">用户信息</h4>
 
-    <div class="messages">
-        <div class="comment" ng-repeat="message in messages track by $index">
-            <a class="avatar">
-                <i class="big icon {{$even ? 'purple female' : 'male'}}"></i>
-            </a>
+            <div class="fields">
+                <div class="required field">
+                    <label>昵称</label>
 
-            <div class="content">
-                <a class="author" ng-bind="'author-' + $index"></a>
-
-                <div class="metadata">
-                    <span class="date">Today at 5:42PM</span>
+                    <div class="ui icon input">
+                        <input type="text" ng-model="user.userName" required placeholder="昵称">
+                        <i class="user icon"></i>
+                    </div>
                 </div>
-
-                <div class="text" ng-bind="message.content"></div>
-
-                <div class="actions">
-                    <a class="reply">回复</a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="comment">
-            <a class="avatar">
-                <i class="big male icon"></i>
-            </a>
-
-            <div class="content">
-                <a class="author">Elliot Fu</a>
-
-                <div class="metadata">
-                    <span class="date">Yesterday at 12:30AM</span>
-                </div>
-                <div class="text">
-                    <p>This has been very useful for my research. Thanks as well!</p>
-                </div>
-                <div class="actions">
-                    <a class="reply">Reply</a>
+                <div class="required field">
+                    <label>性别</label>
+                    <select ng-model="user.gender" required>
+                        <option value="">请选择</option>
+                        <option value="male">男</option>
+                        <option value="female">女</option>
+                    </select>
                 </div>
             </div>
-            <div class="comments">
-                <div class="comment">
-                    <a class="avatar">
-                        <i class="big male icon"></i>
-                    </a>
 
-                    <div class="content">
-                        <a class="author">Jenny Hess</a>
+            <button class="ui blue labeled submit button" type="submit" ng-disabled="loginForm.$invalid">立即注册</button>
+            <button class="ui blue labeled submit button" type="button">随便看看</button>
+        </form>
+    </div>
 
-                        <div class="metadata">
-                            <span class="date">Just now</span>
-                        </div>
-                        <div class="text">
-                            Elliot you are always so right :)
-                        </div>
-                        <div class="actions">
-                            <a class="reply">Reply</a>
+    <div class="ui minimal comments">
+        <h3 class="ui header title" ng-bind="name"></h3>
+
+        <div class="messages">
+            <div class="comment" ng-repeat="message in messages track by $index">
+                <a class="avatar">
+                    <i class="big icon {{$even ? 'purple female' : 'male'}}"></i>
+                </a>
+
+                <div class="content">
+                    <a class="author" ng-bind="'author-' + $index"></a>
+
+                    <div class="metadata">
+                        <span class="date">Today at 5:42PM</span>
+                    </div>
+
+                    <div class="text" ng-bind="message.content"></div>
+
+                    <div class="actions">
+                        <a class="reply">回复</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="comment">
+                <a class="avatar">
+                    <i class="big male icon"></i>
+                </a>
+
+                <div class="content">
+                    <a class="author">Elliot Fu</a>
+
+                    <div class="metadata">
+                        <span class="date">Yesterday at 12:30AM</span>
+                    </div>
+                    <div class="text">
+                        <p>This has been very useful for my research. Thanks as well!</p>
+                    </div>
+                    <div class="actions">
+                        <a class="reply">Reply</a>
+                    </div>
+                </div>
+                <div class="comments">
+                    <div class="comment">
+                        <a class="avatar">
+                            <i class="big male icon"></i>
+                        </a>
+
+                        <div class="content">
+                            <a class="author">Jenny Hess</a>
+
+                            <div class="metadata">
+                                <span class="date">Just now</span>
+                            </div>
+                            <div class="text">
+                                Elliot you are always so right :)
+                            </div>
+                            <div class="actions">
+                                <a class="reply">Reply</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div>
-        <form class="ui reply form" ng-submit="sendMessage(message)" name="chatForm">
-            <div class="field">
-                <textarea ng-model="message.content" required ng-disabled="!registered" placeholder="输入消息"></textarea>
-            </div>
-            <button class="ui blue labeled submit icon button" ng-disabled="chatForm.$invalid || !registered">
-                <i class="icon send"></i> 发送信息
-            </button>
-        </form>
+        <div>
+            <form class="ui reply form" ng-submit="sendMessage(message)" name="chatForm">
+                <div class="field">
+                    <textarea ng-model="message.content" required ng-disabled="!registered" placeholder="输入消息"></textarea>
+                </div>
+                <button class="ui blue labeled submit icon button" ng-disabled="chatForm.$invalid || !registered">
+                    <i class="icon send"></i> 发送信息
+                </button>
+            </form>
+        </div>
     </div>
 </div>
