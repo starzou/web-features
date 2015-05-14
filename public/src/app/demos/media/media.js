@@ -24,8 +24,13 @@
 
     mediaModule.controller('MediaController', ['$scope', function ($scope) {
 
+        var video = document.querySelector('.user-video'),
+            canvas = document.querySelector('.canvas'),
+            context = canvas.getContext("2d");
+
+        console.log(video, canvas);
+
         $scope.getUserMedia = function () {
-            var video = document.querySelector('.user-video');
 
             navigator.getUserMedia(constraints, function (stream) {
 
@@ -38,6 +43,10 @@
             }, function (error) {
                 console.error(error);
             });
+        };
+
+        $scope.takePhoto = function () {
+            context.drawImage(video, 0, 0, 320, 240);
         };
 
     }]);

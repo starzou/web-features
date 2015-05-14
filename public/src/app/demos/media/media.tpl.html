@@ -1,8 +1,14 @@
 <style>
-    .user-video {
-        width: 640px;
-        height: 480px;
+    .border {
+        border: 1px solid rgba(39, 41, 43, 0.15);
     }
+
+    .user-video, .canvas {
+        width: 320px;
+        height: 240px;
+        margin: 10px 0;
+    }
+
 </style>
 
 <div class="ui piled segment">
@@ -11,7 +17,13 @@
     <div>
         <div>
             <div class="ui blue button" ng-click="getUserMedia()">打开摄像头</div>
+            <div class="ui blue button" ng-click="takePhoto()">拍照</div>
         </div>
-        <video class="user-video"></video>
+        <div>
+            <video class="user-video border" height="240" width="320"></video>
+        </div>
+        <div>
+            <canvas class="canvas border" height="240" width="320"></canvas>
+        </div>
     </div>
 </div>
