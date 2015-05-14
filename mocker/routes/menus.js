@@ -37,7 +37,7 @@ router.get('/menus', function (request, response) {
                     title: 'Todo App', state: 'demos.todo'
                 },
                 {
-                    title: 'Chat Room', state: 'demos.chat'
+                    title: 'Chat Room', state: 'demos.chatRoom'
                 }
             ]
         }
