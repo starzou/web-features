@@ -24,6 +24,25 @@
 
     mediaModule.controller('MediaController', ['$scope', function ($scope) {
 
+        $scope.getUserMedia = function () {
+            var video = document.querySelector('.user-video');
+
+            navigator.getUserMedia(constraints, function (stream) {
+
+                video.src = window.URL.createObjectURL(stream);
+
+                video.onloadedmetadata = function (e) {
+                    video.play();
+                };
+
+            }, function (error) {
+                console.error(error);
+            });
+        };
+
     }]);
+
+    var constraints = {audio: true, video: true};
+    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
 })(window, document);
