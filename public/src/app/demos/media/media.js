@@ -15,10 +15,15 @@
                 url  : '/media',
                 views: {
                     '@': {
-                        templateUrl: 'app/demos/media/media.tpl.html'
+                        templateUrl: 'app/demos/media/media.tpl.html',
+                        controller : 'MediaController'
                     }
                 }
             });
+    }]);
+
+    mediaModule.controller('MediaController', ['$scope', function ($scope) {
+
     }]);
 
 })(window, document);
