@@ -40,6 +40,8 @@
                     });
                 });
 
+                socket.emit('message:list');
+
                 // 赋值
                 angular.forEach(['chatName'], function (value) {
                     if ($attrs[value]) {
