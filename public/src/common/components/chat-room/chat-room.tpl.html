@@ -18,7 +18,7 @@
     <div class="messages">
         <div class="comment" ng-repeat="message in messages track by $index">
             <a class="avatar">
-                <i class="big purple female icon"></i>
+                <i class="big icon {{$even ? 'purple female' : 'male'}}"></i>
             </a>
 
             <div class="content">
