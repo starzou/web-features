@@ -38,6 +38,9 @@ router.get('/menus', function (request, response) {
                 },
                 {
                     title: 'Chat Room', state: 'demos.chatRoom'
+                },
+                {
+                    title: 'HTML5 Media', state: 'demos.media'
                 }
             ]
         }

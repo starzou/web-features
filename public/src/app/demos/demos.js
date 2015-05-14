@@ -7,7 +7,7 @@
 (function (window, document) {
     'use strict';
 
-    var demosModule = angular.module('demos', ['demos.chatRoom']);
+    var demosModule = angular.module('demos', ['demos.chatRoom', 'demos.media']);
 
     demosModule.config(['$stateProvider', function ($stateProvider) {
         $stateProvider
