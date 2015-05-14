@@ -43,7 +43,7 @@
                 socket.emit('message:list');
 
                 // 赋值
-                angular.forEach(['chatName'], function (value) {
+                angular.forEach(['name'], function (value) {
                     if ($attrs[value]) {
                         $scope[value] = $attrs[value];
                     }
