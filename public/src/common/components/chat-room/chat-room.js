@@ -1,5 +1,5 @@
 /**
- * @class chat-form
+ * @class chat-room
  * @description 聊天室组件
  * @time 2015-05-09 11:50
  * @author StarZou
@@ -7,13 +7,13 @@
 (function (window, document) {
     'use strict';
 
-    var chatFormModule = angular.module('components.chatForm', []);
+    var chatRoomModule = angular.module('components.chatRoom', []);
 
-    chatFormModule.directive('chatForm', [function () {
+    chatRoomModule.directive('chatRoom', [function () {
         return {
             restrict   : 'E',
             scope      : true,
-            templateUrl: 'common/components/chat-form/chat-form.tpl.html',
+            templateUrl: 'common/components/chat-room/chat-room.tpl.html',
             link       : function ($scope, $element, $attrs) {
                 // socket 对象
                 var socket = $scope.socket;

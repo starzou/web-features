@@ -7,7 +7,7 @@
 (function (window, document) {
     'use strict';
 
-    var app = angular.module('App', ['ui.router', 'ngResource', 'ngMaterial', 'ngAnimate', 'ngSanitize', 'Socket', 'components.chatForm', 'components.menu', 'directives.patcher', 'index', 'features', 'demos']);
+    var app = angular.module('App', ['ui.router', 'ngResource', 'ngMaterial', 'ngAnimate', 'ngSanitize', 'Socket', 'components.chatRoom', 'components.menu', 'directives.patcher', 'index', 'features', 'demos']);
 
     /**
      * App 配置, 用来做一些服务的配置
