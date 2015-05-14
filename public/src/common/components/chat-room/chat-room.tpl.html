@@ -13,6 +13,7 @@
 </style>
 
 <div>
+    <!-- loginForm -->
     <div ng-show="place === 'loginForm'">
         <form class="ui form" name="loginForm" ng-submit="login(user)">
             <h4 class="ui dividing header">用户信息</h4>
@@ -41,6 +42,7 @@
         </form>
     </div>
 
+    <!-- chatForm -->
     <div ng-show="place !== 'loginForm'" class="ui minimal comments">
         <h3 class="ui header title" ng-bind="name"></h3>
 
@@ -61,48 +63,6 @@
 
                     <div class="actions">
                         <a class="reply">回复</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="comment">
-                <a class="avatar">
-                    <i class="big male icon"></i>
-                </a>
-
-                <div class="content">
-                    <a class="author">Elliot Fu</a>
-
-                    <div class="metadata">
-                        <span class="date">Yesterday at 12:30AM</span>
-                    </div>
-                    <div class="text">
-                        <p>This has been very useful for my research. Thanks as well!</p>
-                    </div>
-                    <div class="actions">
-                        <a class="reply">Reply</a>
-                    </div>
-                </div>
-                <div class="comments">
-                    <div class="comment">
-                        <a class="avatar">
-                            <i class="big male icon"></i>
-                        </a>
-
-                        <div class="content">
-                            <a class="author">Jenny Hess</a>
-
-                            <div class="metadata">
-                                <span class="date">Just now</span>
-                            </div>
-                            <div class="text">
-                                Elliot you are always so right :)
-                            </div>
-                            <div class="actions">
-                                <a class="reply">Reply</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
