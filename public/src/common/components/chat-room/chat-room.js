@@ -59,25 +59,31 @@
 
                         // 没有注册
                         if (!registered) {
-
-                            var toast = $mdToast.simple()
-                                .content('请先注册, 再使用!')
-                                .position('top right')
-                                .action('注册')
-                                .highlightAction(true)
-                                .hideDelay(0);
-
-                            $mdToast.show(toast).then(function () {
-
-                            });
+                            showMessage('请先注册, 再使用!');
+                        } else {
+                            $scope.show('chatForm');
+                            showMessage('注册成功!');
                         }
 
                     });
                 });
 
+                var showMessage = $scope.showMessage = function (content) {
+                    var toast = $mdToast.simple()
+                        .content(content || '')
+                        .position('top right')
+                        .hideDelay(3000);
+
+                    $mdToast.show(toast);
+                };
+
                 // 进行登录
                 $scope.login = function (user) {
                     socket.emit('message:login', user);
+                };
+
+                $scope.show = function (place) {
+                    $scope.place = place;
                 };
             }
         };

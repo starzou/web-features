@@ -13,7 +13,7 @@
 </style>
 
 <div>
-    <div>
+    <div ng-show="place === 'loginForm'">
         <form class="ui form" name="loginForm" ng-submit="login(user)">
             <h4 class="ui dividing header">用户信息</h4>
 
@@ -37,11 +37,11 @@
             </div>
 
             <button class="ui blue labeled submit button" type="submit" ng-disabled="loginForm.$invalid">立即注册</button>
-            <button class="ui blue labeled submit button" type="button">随便看看</button>
+            <button class="ui blue labeled submit button" type="button" ng-click="place = 'chatForm'">随便看看</button>
         </form>
     </div>
 
-    <div class="ui minimal comments">
+    <div ng-show="place !== 'loginForm'" class="ui minimal comments">
         <h3 class="ui header title" ng-bind="name"></h3>
 
         <div class="messages">
@@ -113,9 +113,10 @@
                 <div class="field">
                     <textarea ng-model="message.content" required ng-disabled="!registered" placeholder="输入消息"></textarea>
                 </div>
-                <button class="ui blue labeled submit icon button" ng-disabled="chatForm.$invalid || !registered">
+                <button class="ui blue labeled submit icon button" type="submit" ng-disabled="chatForm.$invalid || !registered">
                     <i class="icon send"></i> 发送信息
                 </button>
+                <button class="ui blue labeled submit button" type="button" ng-hide="registered" ng-click="place = 'loginForm'">立即注册</button>
             </form>
         </div>
     </div>
