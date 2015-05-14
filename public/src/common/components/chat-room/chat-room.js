@@ -9,7 +9,7 @@
 
     var chatRoomModule = angular.module('components.chatRoom', []);
 
-    chatRoomModule.directive('chatRoom', [function () {
+    chatRoomModule.directive('chatRoom', ['$mdToast', function ($mdToast) {
         return {
             restrict   : 'E',
             scope      : true,
@@ -47,6 +47,32 @@
                     if ($attrs[value]) {
                         $scope[value] = $attrs[value];
                     }
+                });
+
+                // 检查是否注册
+                socket.emit('message:login');
+
+                socket.on('message:login', function (result) {
+                    $scope.$apply(function () {
+
+                        var registered = $scope.registered = result.registered;
+
+                        // 没有注册
+                        if (!registered) {
+
+                            var toast = $mdToast.simple()
+                                .content('请先注册, 再使用!')
+                                .position('top right')
+                                .action('注册')
+                                .highlightAction(true)
+                                .hideDelay(0);
+
+                            $mdToast.show(toast).then(function () {
+
+                            });
+                        }
+
+                    });
                 });
             }
         };

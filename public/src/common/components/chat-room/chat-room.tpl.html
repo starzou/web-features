@@ -82,9 +82,9 @@
     <div>
         <form class="ui reply form" ng-submit="sendMessage(message)" name="chatForm">
             <div class="field">
-                <textarea ng-model="message.content" required placeholder="输入消息"></textarea>
+                <textarea ng-model="message.content" required ng-disabled="!registered" placeholder="输入消息"></textarea>
             </div>
-            <button class="ui blue labeled submit icon button" ng-disabled="chatForm.$invalid">
+            <button class="ui blue labeled submit icon button" ng-disabled="chatForm.$invalid || !registered">
                 <i class="icon send"></i> 发送信息
             </button>
         </form>
