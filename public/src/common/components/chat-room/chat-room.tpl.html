@@ -1,53 +1,92 @@
 <style>
-    .chat-room {
-        height: 500px;
-    }
-
     .messages {
-        height: 350px;
+        height: 365px;
         overflow-y: scroll;
-        background-color: lightcyan;
-    }
-
-    .messages ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 20px;
-    }
-
-    .message {
-        padding: 5px;
-    }
-
-    .make-area {
-        margin: 10px 0;
+        margin-bottom: 2px;
+        border: 1px solid rgba(39, 41, 43, 0.15);
+        border-radius: 0.2857rem;
     }
 
     .title {
         text-align: center;
-        color: #006600;
     }
 </style>
 
-<div class="chat-room">
-    <h1 class="title" ng-bind="name"></h1>
+<div class="ui minimal comments">
+    <h3 class="ui header title" ng-bind="name"></h3>
 
     <div class="messages">
-        <ul>
-            <li class="message" ng-repeat="message in messages track by $index">
-                <span ng-bind="message.content"></span>
-            </li>
-        </ul>
+        <div class="comment" ng-repeat="message in messages track by $index">
+            <a class="avatar">
+                <i class="big purple female icon"></i>
+            </a>
+
+            <div class="content">
+                <a class="author" ng-bind="'author-' + $index"></a>
+
+                <div class="metadata">
+                    <span class="date">Today at 5:42PM</span>
+                </div>
+
+                <div class="text" ng-bind="message.content"></div>
+
+                <div class="actions">
+                    <a class="reply">回复</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="comment">
+            <a class="avatar">
+                <i class="big male icon"></i>
+            </a>
+
+            <div class="content">
+                <a class="author">Elliot Fu</a>
+
+                <div class="metadata">
+                    <span class="date">Yesterday at 12:30AM</span>
+                </div>
+                <div class="text">
+                    <p>This has been very useful for my research. Thanks as well!</p>
+                </div>
+                <div class="actions">
+                    <a class="reply">Reply</a>
+                </div>
+            </div>
+            <div class="comments">
+                <div class="comment">
+                    <a class="avatar">
+                        <i class="big male icon"></i>
+                    </a>
+
+                    <div class="content">
+                        <a class="author">Jenny Hess</a>
+
+                        <div class="metadata">
+                            <span class="date">Just now</span>
+                        </div>
+                        <div class="text">
+                            Elliot you are always so right :)
+                        </div>
+                        <div class="actions">
+                            <a class="reply">Reply</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="make-area">
-        <form ng-submit="sendMessage(message)" name="chatForm">
-            <div>
-                <label>
-                    <input type="text" ng-model="message.content" required placeholder="输入消息"/>
-                    <input type="submit" value="发送" ng-disabled="chatForm.$invalid"/>
-                </label>
+    <div>
+        <form class="ui reply form" ng-submit="sendMessage(message)" name="chatForm">
+            <div class="field">
+                <textarea ng-model="message.content" required placeholder="输入消息"></textarea>
             </div>
+            <button class="ui blue labeled submit icon button" ng-disabled="chatForm.$invalid">
+                <i class="icon send"></i> 发送信息
+            </button>
         </form>
     </div>
 </div>
