@@ -47,14 +47,14 @@
         <div class="messages">
             <div class="comment" ng-repeat="message in messages track by $index">
                 <a class="avatar">
-                    <i class="big icon {{$even ? 'purple female' : 'male'}}"></i>
+                    <i class="big icon {{message.anchor.gender === 'female' ? 'purple female' : 'male'}}"></i>
                 </a>
 
                 <div class="content">
-                    <a class="author" ng-bind="'author-' + $index"></a>
+                    <a class="author" ng-bind="message.anchor.userName"></a>
 
                     <div class="metadata">
-                        <span class="date">Today at 5:42PM</span>
+                        <span class="date" ng-bind="message.date"></span>
                     </div>
 
                     <div class="text" ng-bind="message.content"></div>
