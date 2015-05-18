@@ -5,10 +5,6 @@
  * @author StarZou
  **/
 
-var body = document.body,
-    headerDiv = document.getElementById('header'),
-    contentDiv = document.getElementById('content');
-
 var TimerMixin = {
     setInterval: function () {
         this.intervals.push(setInterval.apply(null, arguments));
