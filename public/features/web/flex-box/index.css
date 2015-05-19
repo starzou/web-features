@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+}
+
+.div-1 {
+    flex: 1;
+}
+
+.div-2 {
+    width: 20%;
+}
+
+.div-3 {
+    width: 50px;
+}
