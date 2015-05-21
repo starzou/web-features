@@ -37,3 +37,10 @@ function sort(array = [], ...args) {
 }
 
 console.log(sort([3, 1, 2], 1.5, 0));
+
+
+/**
+ * Spread operator
+ */
+var [num1,...array] = [1, 2, 3, 4, 5];
+console.log(array);
