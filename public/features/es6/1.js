@@ -7,14 +7,16 @@
 
 "use strict";
 
-(function testLet() {
+/**
+ * Default parameters : 默认参数
+ */
+function getDefaultPoint() {
+    return 0;
+}
 
-    {
-        var name = 'StarZou';
-        let age = 24;
+function getPoint(x = getDefaultPoint(), y = x) {
+    return {x, y};
+}
 
-        console.log(age);
-    }
-
-    console.log('%s age is %d', name, typeof age != 'undefined' ? age : 0);
-})();
+console.log(getPoint());
+console.log(getPoint(1, 3));
