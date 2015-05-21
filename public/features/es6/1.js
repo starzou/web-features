@@ -7,6 +7,8 @@
 
 "use strict";
 
+var toString = Object.prototype.toString;
+
 /**
  * Default parameters : 默认参数
  */
@@ -20,3 +22,18 @@ function getPoint(x = getDefaultPoint(), y = x) {
 
 console.log(getPoint());
 console.log(getPoint(1, 3));
+
+
+/**
+ * Rest parameters : 其余参数
+ */
+function sort(array = [], ...args) {
+    // args 是数组对象, [object Array]
+    console.log(args);
+
+    array = array.concat(args);
+
+    return array.sort();
+}
+
+console.log(sort([3, 1, 2], 1.5, 0));
