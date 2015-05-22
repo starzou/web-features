@@ -44,3 +44,15 @@ console.log(sort([3, 1, 2], 1.5, 0));
  */
 var [num1,...array] = [1, 2, 3, 4, 5];
 console.log(array);
+
+
+/**
+ * for..of loops
+ */
+function myOf() {
+    for (var value of array) {
+        console.log(value);
+    }
+}
+myOf();
+
