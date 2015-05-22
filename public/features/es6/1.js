@@ -56,3 +56,11 @@ function myOf() {
 }
 myOf();
 
+
+/**
+ * Template strings
+ */
+console.log(`this
+is
+template text. array : ${array.push('I am ok.') && array}
+`);
