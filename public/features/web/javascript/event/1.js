@@ -63,3 +63,7 @@
     }
 
 })(window, document);
+
+function keyEvent(event) {
+    console.log(event.type);
+}
