@@ -22,4 +22,23 @@
         parent = parent.parentElement;
     }
 
+    window.onload = function (event) {
+        console.log(event);
+    };
+
+    /**
+     * image load
+     * @param event
+     */
+    function imageLoadHandler(event) {
+        console.log('load : ', this);
+    }
+
+    var images = document.querySelectorAll('img');
+    var index, image;
+    for (index = 0; index < images.length; index++) {
+        image = images[index];
+        image.addEventListener('load', imageLoadHandler);
+    }
+
 })(window, document);
