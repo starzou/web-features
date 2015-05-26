@@ -41,4 +41,25 @@
         image.addEventListener('load', imageLoadHandler);
     }
 
+    var scrollButton = document.querySelector('#btnScroll');
+    scrollButton.addEventListener('click', function () {
+        myScroll();
+    });
+
+    function myScroll() {
+        var intervalId = setInterval(function () {
+            var clientHeight = document.body.clientHeight;
+            var innerHeight = window.innerHeight;
+            var maxScrollTop = clientHeight - innerHeight;
+
+            var scrollTop = document.body.scrollTop;
+
+            if (scrollTop < maxScrollTop) {
+                document.body.scrollTop += 20;
+            } else {
+                clearInterval(intervalId);
+            }
+        }, 20);
+    }
+
 })(window, document);
