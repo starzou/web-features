@@ -65,5 +65,5 @@
 })(window, document);
 
 function keyEvent(event) {
-    console.log(event.type);
+    console.log(event.type, event.keyCode, event.key, event.charCode, event.char);
 }
