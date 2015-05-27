@@ -102,6 +102,10 @@
         return msg;
     });
 
+    window.addEventListener('hashchange', function (event) {
+        console.log(event, location);
+    });
+
 })(window, document);
 
 function keyEvent(event) {
