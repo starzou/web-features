@@ -62,6 +62,10 @@
         }, 20);
     }
 
+    document.addEventListener('DOMNodeRemoved', function (event) {
+        console.log(event);
+    });
+
 })(window, document);
 
 function keyEvent(event) {
