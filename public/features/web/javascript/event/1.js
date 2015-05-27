@@ -70,6 +70,32 @@
         console.log(event.type, this, event);
     });
 
+    var menu = document.querySelector('.menu');
+
+    document.addEventListener('contextmenu', function (event) {
+        event.preventDefault();
+
+        menu.style.left = getPx(event.pageX);
+        menu.style.top = getPx(event.pageY);
+        menu.style.display = 'block';
+    });
+
+    document.addEventListener('click', function (event) {
+        menu.style.display = 'none';
+    });
+
+    function getPx(num, px) {
+        var type = typeof  num;
+
+        if (type === 'number') {
+            return num + (px || 'px');
+        } else if (type === 'string') {
+            return num;
+        } else {
+            return 0 + (px || 'px');
+        }
+    }
+
 })(window, document);
 
 function keyEvent(event) {
