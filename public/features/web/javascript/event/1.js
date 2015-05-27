@@ -96,6 +96,12 @@
         }
     }
 
+    window.addEventListener('beforeunload', function (event) {
+        var msg = '你是否真的离开?';
+        event.returnValue = msg;
+        return msg;
+    });
+
 })(window, document);
 
 function keyEvent(event) {
