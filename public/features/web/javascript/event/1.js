@@ -63,7 +63,11 @@
     }
 
     document.addEventListener('DOMNodeRemoved', function (event) {
-        console.log(event);
+        console.log(event.type, this, event);
+    });
+
+    document.addEventListener('DOMNodeInserted', function (event) {
+        console.log(event.type, this, event);
     });
 
 })(window, document);
