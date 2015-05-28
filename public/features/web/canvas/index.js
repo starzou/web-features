@@ -17,6 +17,10 @@ $.on = function (element, type, listener) {
     };
 };
 
+var getRandomColor = function () {
+    return '#' + ('00000' + (Math.random() * 0x1000000 << 0).toString(16)).slice(-6);
+};
+
 (function (window, document) {
     'use strict';
 
@@ -28,9 +32,21 @@ $.on = function (element, type, listener) {
 
     var saveAsImageButton = $('#saveAsImageButton');
 
+    var fillRectButton = $('#fillRectButton');
+
     $.on(saveAsImageButton, 'click', function () {
         var imgUrl = drawingCanvas.toDataURL('image/png');
         displayImage.src = imgUrl;
+    });
+
+    var x = 20, y = 20, step = 10, w = 64, h = 64;
+
+    $.on(fillRectButton, 'click', function () {
+        context.fillStyle = getRandomColor();
+        context.fillRect(x, y, w, h);
+
+        x += step;
+        y += step;
     });
 
     console.log(context);
