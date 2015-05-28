@@ -1,0 +1,54 @@
+.sm {
+    height: 240px;
+    width: 320px;
+    border: 1px solid #006666;
+}
+
+.container {
+    display: flex;
+}
+
+.button {
+    cursor: pointer;
+    display: inline-block;
+    min-height: 1em;
+    outline: 0;
+    border: none;
+    vertical-align: baseline;
+    color: rgba(0, 0, 0, 0.6);
+    font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    margin: 0 .25em 0 0;
+    padding: .78571em 1.5em;
+    text-transform: none;
+    text-shadow: none;
+    font-weight: 700;
+    line-height: 1;
+    font-style: normal;
+    text-align: center;
+    text-decoration: none;
+    background: #E0E0E0 none;
+    border-radius: .2857rem;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0) inset, 0 0 0 0 rgba(39, 41, 43, 0.15) inset;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: opacity .1s ease, background-color .1s ease, color .1s ease, box-shadow .1s ease, background .1s ease;
+    transition: opacity .1s ease, background-color .1s ease, color .1s ease, box-shadow .1s ease, background .1s ease;
+    will-change: '';
+    -webkit-tap-highlight-color: transparent;
+}
+
+.button.primary {
+    color: #FFF;
+    text-shadow: none;
+    background: #3B83C0 none;
+}
+
+.mg10 {
+    margin: 10px;
+}
+
+.mg5 {
+    margin: 5px;
+}
