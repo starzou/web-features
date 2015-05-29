@@ -36,4 +36,31 @@ router.get('/images', function (request, response) {
     response.send(new Result(true, data));
 });
 
+/**
+ * 查询 image list
+ */
+router.get('/images/:id', function (request, response) {
+    var id = +request.params.id;
+
+    var data = {
+        image: {
+            id   : id,
+            title: '雪糕校花网络爆红 纯美女神青春风暴又临'
+        },
+        list : [
+            {
+                url: 'http://s1.dwstatic.com/group1/M00/A8/6F/f759f70958f620132e538002ca11c8f0.jpg'
+            },
+            {
+                url: 'http://s1.dwstatic.com/group1/M00/62/EB/d53eac544adf4db060b8aa7b67f3d579.jpg'
+            },
+            {
+                url: 'http://s1.dwstatic.com/group1/M00/E2/1F/66eb5ab3d934fc671db21f9a0da24cb3.jpg'
+            }
+        ]
+    };
+
+    response.send(new Result(true, data));
+});
+
 module.exports = router;
