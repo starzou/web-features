@@ -7,17 +7,20 @@
 (function (window, document) {
     'use strict';
 
-
     var Header = React.createClass({
-        counter    : 0,
+        counter: 0,
+
         handleClick: function () {
             // 不建议使用
-            this.props.title = ++this.counter;
-            this.forceUpdate();
+            //this.props.title = ++this.counter;
+            //this.forceUpdate();
+
+            this.setProps({title: ++this.counter});
         },
-        render     : function () {
+
+        render: function () {
             return (
-                <div onClick={this.handleClick}>
+                <div title={this.props.title} onClick={this.handleClick}>
                     <h1>{this.props.title}</h1>
                 </div>
             );
