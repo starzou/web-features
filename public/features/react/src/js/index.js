@@ -43,6 +43,7 @@
             return (
                 <div>
                     {this.props.children}
+                    <h1>{this.props.title}</h1>
                 </div>
             );
         }
