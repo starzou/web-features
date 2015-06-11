@@ -11,6 +11,12 @@
     console.log(app);
 
     var App = React.createClass({
+        propTypes: {
+            header   : React.PropTypes.object.isRequired,
+            container: React.PropTypes.object.isRequired,
+            footer   : React.PropTypes.object.isRequired
+        },
+
         render: function () {
             return (
                 <div>
@@ -54,10 +60,13 @@
 
 
     var config = {
-        header: {
+        header   : {
             title: 'React 实战'
         },
-        footer: {
+        container: {
+            title: ['JUST THE UI', 'VIRTUAL DOM', 'DATA FLOW'].join(',')
+        },
+        footer   : {
             title: 'By StarZou'
         }
     };
