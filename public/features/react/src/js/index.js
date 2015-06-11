@@ -21,7 +21,11 @@
             return (
                 <div id={this.props.app.id}>
                     <Header {...this.props.header}/>
-                    <Container {...this.props.container}/>
+                    <Container {...this.props.container}>
+                        <h2>Container Title</h2>
+
+                        <div>Container Content</div>
+                    </Container>
                     <Footer {...this.props.footer}/>
                 </div>
             );
@@ -42,8 +46,8 @@
         render: function () {
             return (
                 <div>
-                    {this.props.children}
                     <h1>{this.props.title}</h1>
+                    {this.props.children}
                 </div>
             );
         }
