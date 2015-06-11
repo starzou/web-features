@@ -19,7 +19,7 @@
 
         render: function () {
             return (
-                <div>
+                <div id={this.props.app.id}>
                     <Header {...this.props.header}/>
                     <Container {...this.props.container}/>
                     <Footer {...this.props.footer}/>
@@ -61,6 +61,9 @@
 
 
     var config = {
+        app      : {
+            id: 'myApp'
+        },
         header   : {
             title: 'React 实战'
         },
