@@ -57,6 +57,9 @@
         },
 
         handleAddClick: function () {
+            if (!this.state.word) {
+                return;
+            }
             var words = this.state.words.concat([this.state.word]);
             this.setState({words: words, word: ''});
         },
@@ -71,6 +74,16 @@
                 return (<h1 key={index}>{title}</h1>);
             });
 
+            var wordsElement = (
+                <ul>
+                    {
+                        this.state.words.map(function (word, index) {
+                            return (<li key={index}>{word}</li>);
+                        })
+                    }
+                </ul>
+            );
+
             return (
                 <div>
                     <div>
@@ -78,13 +91,9 @@
                         <button onClick={this.handleAddClick}>Add</button>
                     </div>
                     <div>
-                        <ul>
-                            {
-                                this.state.words.map(function (word, index) {
-                                    return (<li key={index}>{word}</li>);
-                                })
-                            }
-                        </ul>
+                        <ReactCSSTransitionGroup transitionName="example">
+                            {wordsElement}
+                        </ReactCSSTransitionGroup>
                     </div>
                     {titles}
                     {this.props.children}
