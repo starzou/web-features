@@ -19,9 +19,25 @@
             footer   : React.PropTypes.object.isRequired
         },
 
+        getInitialState: function () {
+            console.log('App getInitialState', arguments);
+
+            return {};
+        },
+
+        handleChange: function (event) {
+            var container = React.__spread({}, this.props.container);
+            container.title.push(event.target.value);
+            this.setProps({container: container});
+        },
+
         render: function () {
             return (
                 <div id={this.props.app.id}>
+                    <div>
+                        <span>Name : </span>
+                        <input type="text" onChange={this.handleChange}/>
+                    </div>
                     <Header {...this.props.header}/>
                     <Container {...this.props.container}>
                         <h2>Container Title</h2>
