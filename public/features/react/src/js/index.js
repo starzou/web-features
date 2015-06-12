@@ -52,6 +52,9 @@
                 <div>
                     {titles}
                     {this.props.children}
+                    <div>
+                        <input type="text" defaultValue={this.props.word}/>
+                    </div>
                 </div>
             );
         }
@@ -76,7 +79,8 @@
             title: 'React 实战'
         },
         container: {
-            title: ['JUST THE UI', 'VIRTUAL DOM', 'DATA FLOW']
+            title: ['JUST THE UI', 'VIRTUAL DOM', 'DATA FLOW'],
+            word : 'Hello World!'
         },
         footer   : {
             title: 'By StarZou'
