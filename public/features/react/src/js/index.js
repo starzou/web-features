@@ -10,6 +10,8 @@
     var app = document.querySelector('#app');
     console.log(app);
 
+    var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+
     var App = React.createClass({
         propTypes: {
             header   : React.PropTypes.object.isRequired,
@@ -44,11 +46,19 @@
 
     var Container = React.createClass({
         getInitialState: function () {
-            return {word: this.props.word};
+            return {
+                word : this.props.word,
+                words: []
+            };
         },
 
         handleChange: function (event) {
             this.setState({word: event.target.value});
+        },
+
+        handleAddClick: function () {
+            var words = this.state.words.concat([this.state.word]);
+            this.setState({words: words, word: ''});
         },
 
         componentDidMount: function () {
@@ -63,11 +73,21 @@
 
             return (
                 <div>
-                    {titles}
-                    {this.props.children}
                     <div>
                         <input type="text" ref="wordInput" value={this.state.word} onChange={this.handleChange}/>
+                        <button onClick={this.handleAddClick}>Add</button>
                     </div>
+                    <div>
+                        <ul>
+                            {
+                                this.state.words.map(function (word, index) {
+                                    return (<li key={index}>{word}</li>);
+                                })
+                            }
+                        </ul>
+                    </div>
+                    {titles}
+                    {this.props.children}
                 </div>
             );
         }
