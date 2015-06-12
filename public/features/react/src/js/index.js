@@ -25,10 +25,18 @@
             return {};
         },
 
-        handleChange: function (event) {
+        handleClick: function () {
+            var titleInput = this.refs.titleInput.getDOMNode();
+
+            if (!titleInput.value) {
+                return;
+            }
+
             var container = React.__spread({}, this.props.container);
-            container.title.push(event.target.value);
+            container.title.push(titleInput.value);
             this.setProps({container: container});
+
+            titleInput.value = '';
         },
 
         render: function () {
@@ -36,7 +44,8 @@
                 <div id={this.props.app.id}>
                     <div>
                         <span>Name : </span>
-                        <input type="text" onChange={this.handleChange}/>
+                        <input type="text" ref="titleInput"/>
+                        <button onClick={this.handleClick}>Add Title</button>
                     </div>
                     <Header {...this.props.header}/>
                     <Container {...this.props.container}>
