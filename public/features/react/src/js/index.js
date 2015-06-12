@@ -45,11 +45,55 @@
     });
 
     var Container = React.createClass({
+
+        getDefaultProps: function () {
+            console.log('Container getDefaultProps', arguments);
+
+            return {
+                _name: 'Container'
+            };
+        },
+
         getInitialState: function () {
+            console.log('Container getInitialState', arguments);
+
             return {
                 word : this.props.word,
                 words: []
             };
+        },
+
+        componentWillMount: function () {
+            console.log('Container componentWillMount', arguments);
+        },
+
+        componentDidMount: function () {
+            console.log('Container componentDidMount', arguments);
+
+            console.log(this.getDOMNode());
+            console.log(this.refs.wordInput.getDOMNode());
+        },
+
+        componentWillReceiveProps: function () {
+            console.log('Container componentWillReceiveProps', arguments);
+        },
+
+        shouldComponentUpdate: function () {
+            console.log('Container shouldComponentUpdate', arguments);
+
+            return true;
+        },
+
+        componentWillUpdate: function () {
+            console.log('Container componentWillUpdate', arguments);
+        },
+
+        componentDidUpdate: function () {
+            console.log('Container componentDidUpdate', arguments);
+        },
+
+        componentWillUnmount: function () {
+            console.log('Container componentWillUnmount', arguments);
         },
 
         handleChange: function (event) {
@@ -68,11 +112,6 @@
             var newWords = this.state.words;
             newWords.splice(index, 1);
             this.setState({words: newWords});
-        },
-
-        componentDidMount: function () {
-            console.log(this.getDOMNode());
-            console.log(this.refs.wordInput.getDOMNode());
         },
 
         render: function () {
