@@ -43,6 +43,14 @@
     });
 
     var Container = React.createClass({
+        getInitialState: function () {
+            return {word: this.props.word};
+        },
+
+        handleChange: function (event) {
+            this.setState({word: event.target.value});
+        },
+
         render: function () {
             var titles = this.props.title.map(function (title, index) {
                 return (<h1 key={index}>{title}</h1>);
@@ -53,7 +61,7 @@
                     {titles}
                     {this.props.children}
                     <div>
-                        <input type="text" defaultValue={this.props.word}/>
+                        <input type="text" value={this.state.word} onChange={this.handleChange}/>
                     </div>
                 </div>
             );
