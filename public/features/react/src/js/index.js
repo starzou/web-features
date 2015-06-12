@@ -44,9 +44,13 @@
 
     var Container = React.createClass({
         render: function () {
+            var titles = this.props.title.map(function (title, index) {
+                return (<h1 key={index}>{title}</h1>);
+            });
+
             return (
                 <div>
-                    <h1>{this.props.title}</h1>
+                    {titles}
                     {this.props.children}
                 </div>
             );
@@ -72,7 +76,7 @@
             title: 'React 实战'
         },
         container: {
-            title: ['JUST THE UI', 'VIRTUAL DOM', 'DATA FLOW'].join(',')
+            title: ['JUST THE UI', 'VIRTUAL DOM', 'DATA FLOW']
         },
         footer   : {
             title: 'By StarZou'
