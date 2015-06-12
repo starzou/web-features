@@ -64,6 +64,12 @@
             this.setState({words: words, word: ''});
         },
 
+        handleRemoveClick: function (index) {
+            var newWords = this.state.words;
+            newWords.splice(index, 1);
+            this.setState({words: newWords});
+        },
+
         componentDidMount: function () {
             console.log(this.getDOMNode());
             console.log(this.refs.wordInput.getDOMNode());
@@ -78,8 +84,13 @@
                 <ul>
                     {
                         this.state.words.map(function (word, index) {
-                            return (<li key={index}>{word}</li>);
-                        })
+                            return (
+                                <li key={index}>
+                                    <span>{word}</span>
+                                    <button onClick={this.handleRemoveClick.bind(this, index)}>x</button>
+                                </li>
+                            );
+                        }.bind(this))
                     }
                 </ul>
             );
