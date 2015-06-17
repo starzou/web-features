@@ -33,6 +33,7 @@
     "animate.css": "~3.2.6",
     "zepto": "~1.1.6",
     "bootstrap": "~3.3.4",
-    "underscore": "~1.8.3"
+    "underscore": "~1.8.3",
+    "pure": "~0.6.0"
   }
 }
