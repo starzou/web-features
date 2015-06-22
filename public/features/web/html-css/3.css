@@ -18,3 +18,38 @@ body {
     padding: 10px 0;
     text-align: center;
 }
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    outline: 0;
+    cursor: pointer;
+}
+
+.btn-primary {
+    color: #FFF;
+    background-color: #337AB7;
+    border-color: #2E6DA4;
+}
+
+.or {
+    position: relative;
+    display: inline-block;
+}
+
+.or:before {
+    content: 'or';
+    border-radius: 2em;
+    padding: 2px;
+    position: absolute;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background-color: #FFF;
+    top: -16px;
+    left: -10px;
+
+}
+
+.mg10 {
+    margin: 10px;
+}
