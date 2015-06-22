@@ -8,6 +8,10 @@
     border: 1px solid rgba(0, 0, 0, 0);
 }
 
+.my-btn:focus {
+    outline: 0;
+}
+
 .my-btn-primary {
     color: #FFF;
     background-color: #337AB7;
@@ -18,7 +22,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    display: block;
+    display: none;
     margin-top: 2px;
     list-style: none;
     border: 1px solid rgba(0, 0, 0, 0.15);
@@ -30,4 +34,8 @@
 .my-menu > li > a {
     padding: 2px 20px;
     text-decoration: none;
+}
+
+.open > .my-menu {
+    display: block;
 }
