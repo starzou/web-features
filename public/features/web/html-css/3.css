@@ -53,3 +53,64 @@ body {
 .mg10 {
     margin: 10px;
 }
+
+.btn.loading {
+    position: relative;
+    cursor: default;
+    pointer-events: none;
+    color: rgba(0, 0, 0, 0) !important;
+}
+
+.btn.loading:before {
+    position: absolute;
+    content: '';
+    width: 1.2857em;
+    height: 1.2857em;
+    top: 45%;
+    left: 47%;
+    margin: -.64285em 0 0 -.64285em;
+    border-radius: 500rem;
+    border: .2em solid rgba(0, 0, 0, 0.15);
+}
+
+.btn.loading:after {
+    position: absolute;
+    content: '';
+    top: 45%;
+    left: 47%;
+    margin: -.64285em 0 0 -.64285em;
+    width: 1.2857em;
+    height: 1.2857em;
+    -webkit-animation: button-spin .6s linear;
+    animation: button-spin .6s linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    border-radius: 500rem;
+    border: .2em solid rgba(0, 0, 0, 0);
+    border-top-color: #FFF;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0);
+}
+
+@-webkit-keyframes button-spin {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes button-spin {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
