@@ -114,3 +114,31 @@ body {
         transform: rotate(360deg);
     }
 }
+
+@keyframes pen {
+    0% {
+        transform: scale(1, 1);
+    }
+    25% {
+        transform: scale(1.25, 1.25);
+    }
+    50% {
+        transform: scale(1.5, 1.5);
+    }
+    75% {
+        transform: scale(1.75, 1.75);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+.pen {
+    width: 100px;
+    height: 100px;
+    display: block;
+    background-color: #00918b;
+    animation: pen 1s linear;
+    margin: 0 auto;
+    animation-iteration-count: infinite;
+}
