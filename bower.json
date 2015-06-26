@@ -34,6 +34,7 @@
     "zepto": "~1.1.6",
     "bootstrap": "~3.3.4",
     "underscore": "~1.8.3",
-    "pure": "~0.6.0"
+    "pure": "~0.6.0",
+    "ratchet": "~2.0.2"
   }
 }
