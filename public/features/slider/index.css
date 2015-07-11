@@ -1,0 +1,91 @@
+/*components*/
+.device {
+    position: relative;
+    top: 50px;
+    display: block;
+    width: 395px;
+    height: 813px;
+    margin-left: -20px;
+    font-family: "Helvetica Neue", sans-serif;
+    background: url(images/device-sprite.png) no-repeat 0 0;
+    background-size: 300%;
+    -webkit-transition: background-image .1s linear;
+    -moz-transition: background-image .1s linear;
+    transition: background-image .1s linear;
+    font-size: 17px;
+    line-height: 21px;
+}
+
+.device .device-content {
+    position: absolute;
+    top: 117px;
+    left: 37px;
+    width: 321px;
+    height: 569px;
+    overflow: hidden;
+    font-size: 17px;
+    line-height: 21px;
+    background-color: #FFF;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.slider .slide-group {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+    white-space: nowrap;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+.slider .slide-group .slide {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    vertical-align: top;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    cursor: grab;
+}
+
+.slider .slide-group .slide-text {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+    font-size: 24px;
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/*util*/
+.bg-red {
+    background-color: red;
+}
+
+.bg-green {
+    background-color: green;
+}
+
+.bg-blue {
+    background-color: blue;
+}
+
+.bg-dc {
+    background-color: darkcyan;
+}
+
+.bg-yellow {
+    background-color: yellow;
+}
