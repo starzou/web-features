@@ -5,5 +5,7 @@
  * @author StarZou
  **/
 
-document.write("It works.");
-exports.date = Date.now();
+var Date = require('./Date');
+var date = Date.getDate();
+document.write("It works.\nDate.getDate() = " + JSON.stringify(date));
+exports.date = date;
