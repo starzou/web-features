@@ -52,6 +52,7 @@
 	 **/
 
 	document.write("It works.");
+	exports.date = Date.now();
 
 /***/ }
 /******/ ]);
