@@ -5,6 +5,9 @@
  * @author StarZou
  **/
 
+
+require('./index.css');
+
 var Date = require('./Date');
 var date = Date.getDate();
 document.write("It works.\nDate.getDate() = " + JSON.stringify(date));
