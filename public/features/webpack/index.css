@@ -5,3 +5,7 @@ body {
     color: #333;
     font-family: Helvetica, Arial, freesans, clean, sans-serif;
 }
+
+h1 {
+    font-size: 36px;
+}
