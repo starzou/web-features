@@ -30,6 +30,8 @@
     "uniq": "^1.0.1"
   },
   "devDependencies": {
-    "gulp": "^3.8.11"
+    "css-loader": "^0.15.5",
+    "gulp": "^3.8.11",
+    "style-loader": "^0.12.3"
   }
 }
