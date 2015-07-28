@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>html2canvas 研究</title>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+    <div id="contentArea">
+        <h1>Hello</h1>
+
+        <h2>World</h2>
+    </div>
+
+    <script src="../../bower_components/html2canvas/build/html2canvas.js"></script>
+    <script type="text/javascript">
+        html2canvas(document.body, {
+            onrendered: function (canvas) {
+                document.body.appendChild(canvas);
+            }
+        });
+    </script>
+</body>
+</html>

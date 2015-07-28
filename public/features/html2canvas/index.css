@@ -1,0 +1,13 @@
+#contentArea {
+    background-color: #004444;
+    width: 100%;
+    height: 200px;
+}
+
+#contentArea h1 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#contentArea h2 {
+    font-family: "Courier New";
+}
