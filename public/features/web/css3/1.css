@@ -67,3 +67,9 @@
     -webkit-flex: 1;
     flex: 1;
 }
+
+.title:hover {
+    width: 300px;
+    transition: all 1s;
+    transform: scale(2, 2) translate(10px, 10px) rotate(360deg);
+}
