@@ -5,4 +5,5 @@
  * @author StarZou
  **/
 
-console.log(this); // master
+console.log(this); // masterconsole.log(this);
+// test
