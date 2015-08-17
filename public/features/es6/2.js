@@ -6,5 +6,3 @@
  **/
 
 console.log(this);
-// branch// test
-console.log(this);
