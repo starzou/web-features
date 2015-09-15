@@ -94,3 +94,15 @@
     transform: scale(.8) rotate(-2deg);
     transform-origin: 100% 50%;
 }
+
+.sjx {
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right: 15px solid green;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.sjx:hover {
+    transform: scale(1.8) rotate(-20deg);
+}
