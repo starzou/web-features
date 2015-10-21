@@ -1,0 +1,10 @@
+.title {
+    color: red;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+*:not(.title) {
+    color: green;
+}
