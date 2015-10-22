@@ -27,3 +27,22 @@ body {
 .title:active {
     color: red;
 }
+
+.half {
+    width: 50vw;
+    height: 50vh;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.bg-img-1 {
+    background-image: url("http://img6.hao123.com/data/1_718bd39a1abddba5850ca841cac4d4d8_0");
+}
+
+.bg-img-2 {
+    background-image: url("http://img1.hao123.com/data/1_9ed9e5b578279f310a7896fbd7feb6b5_0");
+}
