@@ -41,10 +41,11 @@ body {
 
 .bg-img-1 {
     background: url("http://img6.hao123.com/data/1_718bd39a1abddba5850ca841cac4d4d8_0") no-repeat;
+    background-size: cover;
 }
 
 .bg-img-2 {
     border: 1px solid red;
-    background: url("http://img1.hao123.com/data/1_9ed9e5b578279f310a7896fbd7feb6b5_0") no-repeat center;
+    background: url("http://img1.hao123.com/data/1_9ed9e5b578279f310a7896fbd7feb6b5_0") no-repeat;
     background-size: cover;
 }
