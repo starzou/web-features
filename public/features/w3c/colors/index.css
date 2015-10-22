@@ -4,6 +4,7 @@ body {
 }
 
 .title {
+    padding: .5em;
     color: green;
     font-family: "Consolas", monospace;
     font-size: 2em;
