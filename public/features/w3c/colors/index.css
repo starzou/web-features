@@ -1,3 +1,19 @@
 body {
-    background-image: url("https://avatars1.githubusercontent.com/u/4827986?v=3&s=460");
+    background: url("https://avatars1.githubusercontent.com/u/4827986?v=3&s=460") scroll;
+    height: 2000px;
+}
+
+.title {
+    color: green;
+    font-family: "Consolas", monospace;
+    font-size: 2em;
+}
+
+.center {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.title:active {
+    color: red;
 }
