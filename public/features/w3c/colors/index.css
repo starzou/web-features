@@ -1,6 +1,14 @@
 body {
-    background: url("https://avatars1.githubusercontent.com/u/4827986?v=3&s=460") scroll;
-    height: 2000px;
+
+}
+
+.color-block {
+    margin: 20px auto;
+    width: 200px;
+    height: 200px;
+    background: #379882;
+    border: 10px solid #984552;
+    box-sizing: border-box;
 }
 
 .title {
@@ -8,6 +16,7 @@ body {
     color: green;
     font-family: "Consolas", monospace;
     font-size: 2em;
+    -webkit-user-select: none;
 }
 
 .center {
