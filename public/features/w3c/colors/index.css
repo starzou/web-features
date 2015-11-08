@@ -1,6 +1,4 @@
-body {
-
-}
+@import url("../base.css");
 
 .color-block {
     margin: 20px auto;
