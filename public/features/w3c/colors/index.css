@@ -47,3 +47,8 @@
     background: url("http://img1.hao123.com/data/1_9ed9e5b578279f310a7896fbd7feb6b5_0") no-repeat;
     background-size: cover;
 }
+
+font[color] {
+    color: orange !important;
+}
+
