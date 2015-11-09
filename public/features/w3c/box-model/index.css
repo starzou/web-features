@@ -1,0 +1,12 @@
+.title {
+    text-align: center;
+    color: #ff2a00;
+}
+
+.box-model {
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    border: 10px solid #8d00ff;
+    height: 2em;
+}
