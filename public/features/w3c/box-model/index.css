@@ -3,10 +3,16 @@
     color: #ff2a00;
 }
 
+/*
+ * The background style of the content, padding, and border areas of a box is specified by the 'background' property of the generating element.
+ * Margin backgrounds are always transparent.
+ */
 .box-model {
     display: block;
     padding: 10px;
     margin: 10px;
     border: 10px solid #8d00ff;
     height: 2em;
+
+    background-color: #006666;
 }
