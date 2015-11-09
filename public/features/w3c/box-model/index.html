@@ -7,8 +7,25 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1 class="title box-model">Box model</h1>
+    <div class="title box-model">
+        <h1>Box model</h1>
 
-    <div></div>
+        <div>A box.</div>
+        <div class="box-child">
+            A.1 box
+        </div>
+    </div>
+
+    <div class="box-model">B box.</div>
+    <div class="inline-block-box box-model">C box.</div>
+    <div class="inline-block-box box-model">D box.</div>
+
+    <div>
+        <div class="margin-test">
+            These properties apply to all elements, but vertical margins will not have any effect on non-replaced inline
+            elements.
+        </div>
+    </div>
+
 </body>
 </html>
