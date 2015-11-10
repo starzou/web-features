@@ -32,3 +32,19 @@
     display: inline;
     margin: 10px;
 }
+
+.inline {
+    display: inline;
+}
+
+.block {
+    display: block;
+}
+
+.border {
+    border: 1px solid #ff2a00;
+}
+
+.margin {
+    margin: 10px;
+}
