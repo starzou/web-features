@@ -1,3 +1,14 @@
+body > * {
+    border: 1px dashed rgba(245, 103, 96, 0.8);
+    margin-bottom: 2em;
+    display: block;
+    min-height: 2em;
+}
+
+body > *:empty {
+
+}
+
 .title {
     text-align: center;
     color: #ff2a00;
@@ -47,4 +58,11 @@
 
 .margin {
     margin: 10px;
+}
+
+.em {
+    padding: 2px;
+    margin: 1em;
+    border: medium dashed;
+    line-height: 2.4em;
 }
