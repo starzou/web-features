@@ -65,7 +65,19 @@ body > *:empty {
 }
 
 .border {
-    border: 1px solid #ff2a00;
+    border: 1px solid #9E9E9E;
+}
+
+.border-red {
+    border-color: #F44336;
+}
+
+.border-green {
+    border-color: #4CAF50;
+}
+
+.border-blue {
+    border-color: #3F51B5;
 }
 
 .margin {
@@ -147,6 +159,19 @@ body > *:empty {
 
 .img {
     object-fit: cover;
+}
+
+.box-50 {
+    width: 50px;
+    height: 50px;
+}
+
+.box-100 {
     width: 100px;
     height: 100px;
+}
+
+.box-200 {
+    width: 200px;
+    height: 200px;
 }
