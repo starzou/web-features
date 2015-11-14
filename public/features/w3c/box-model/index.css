@@ -3,14 +3,14 @@ body {
 }
 
 body > * {
-    border: 1px dashed rgba(245, 103, 96, 0.8);
+    border: 1px dashed rgba(245, 103, 96, .8);
     margin-bottom: 2em;
     display: block;
     min-height: 2em;
 }
 
 .block-box {
-    border: 1px dashed rgba(245, 103, 96, 0.8);
+    border: 1px dashed rgba(245, 103, 96, .8);
     display: block;
     min-height: 2em;
 }
@@ -101,18 +101,18 @@ body > *:empty {
 
 .text {
     display: inline-block;
-    line-height: 1.2em;
-    padding: 0.5em;
-    border-radius: 0.3em;
+    line-height: 1em;
+    padding: .5em;
+    border-radius: .3em;
     background-color: #8BC34A;
     color: #ffffff;
 }
 
 .tip {
     display: inline-block;
-    line-height: 1.2em;
-    padding: 0.5em;
-    border-radius: 0.3em;
+    line-height: 1em;
+    padding: .5em;
+    border-radius: .3em;
     background-color: #00BCD4;
     color: #ffffff;
     float: right;
