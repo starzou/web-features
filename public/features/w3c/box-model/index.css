@@ -109,7 +109,7 @@ body > *:empty {
     right: 0;
 }
 
-.relative:active {
+.transition:active {
     left: 50%;
 }
 
