@@ -1,5 +1,5 @@
 .the-title {
-
+    color: green;
 }
 
 .the-title:before {
@@ -9,3 +9,4 @@
 .the-title:after {
     content: "automatic numbering, and lists";
 }
+
