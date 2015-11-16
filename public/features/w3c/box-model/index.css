@@ -109,8 +109,32 @@ body > *:empty {
     right: 0;
 }
 
-.transition:active {
+.absolute {
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.fixed {
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+
+.left10:active {
+    left: 10%;
+}
+
+.left20:active {
+    left: 20%;
+}
+
+.left50:active {
     left: 50%;
+}
+
+.left10 {
+    left: 10px;
 }
 
 .left20 {
@@ -119,6 +143,18 @@ body > *:empty {
 
 .left50 {
     left: 50px;
+}
+
+.top10 {
+    top: 10px;
+}
+
+.top20 {
+    top: 20px;
+}
+
+.top50 {
+    top: 50px;
 }
 
 .width-half {
