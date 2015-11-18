@@ -1,3 +1,7 @@
+q:lang(zh-CN) {
+    quotes: '[' ']' '"' '"' "<" " >";
+}
+
 .the-title {
     color: green;
 }

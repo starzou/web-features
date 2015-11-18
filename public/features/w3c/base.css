@@ -8,6 +8,7 @@ body:after {
 
 body {
     font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    counter-reset: Example;
 }
 
 body > * {
@@ -15,7 +16,17 @@ body > * {
     border: 1px dashed rgba(245, 103, 96, .8);
     display: block;
     min-height: 2em;
-    margin-bottom: 2em;
+    margin-top: 2em;
+}
+
+body > *:before {
+    content: "Example: " counter(Example);
+    counter-increment: Example;
+    color: red;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: -25px;
 }
 
 .block-box {
