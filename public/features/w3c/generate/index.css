@@ -13,3 +13,18 @@ q:lang(zh-CN) {
 .the-title:after {
     content: attr(data-title) close-quote;
 }
+
+.parent {
+    counter-reset: Item;
+}
+
+.children {
+    display: block;
+    margin-left: 2em;
+}
+
+.children:before {
+    content: counters(Item, '.');
+    /*content: counter(Item);*/
+    counter-increment: Item;
+}
