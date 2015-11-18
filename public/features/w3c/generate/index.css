@@ -28,3 +28,7 @@ q:lang(zh-CN) {
     /*content: counter(Item);*/
     counter-increment: Item;
 }
+
+ol {
+    list-style: lower-alpha inside url("https://avatars1.githubusercontent.com/u/4827986?v=3&s=20");
+}
