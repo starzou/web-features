@@ -32,3 +32,7 @@ q:lang(zh-CN) {
 ol {
     list-style: lower-alpha inside url("https://avatars1.githubusercontent.com/u/4827986?v=3&s=20");
 }
+
+@page {
+    margin: 3cm;
+}
