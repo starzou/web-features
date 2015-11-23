@@ -216,6 +216,18 @@ body > *:empty {
     margin-right: auto;
 }
 
+.text-success {
+    color: #4CAF50;
+}
+
+.text-primary {
+    color: #2196F3;
+}
+
+.text-danger {
+    color: #F44336;
+}
+
 .text-center {
     text-align: center;
 }
