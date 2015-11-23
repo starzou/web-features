@@ -62,3 +62,9 @@ ol {
 .white-space {
     white-space: normal;
 }
+
+.caption {
+    caption-side: top;
+    width: auto;
+    text-align: center;
+}
