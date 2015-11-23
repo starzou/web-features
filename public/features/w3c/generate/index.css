@@ -58,3 +58,7 @@ ol {
     letter-spacing: .2em;
     word-spacing: 1em;
 }
+
+.white-space {
+    white-space: normal;
+}
