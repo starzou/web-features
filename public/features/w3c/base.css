@@ -1,5 +1,6 @@
 body:after {
-    content: "Copyright (c) 2015 StarZou" url("https://avatars1.githubusercontent.com/u/4827986?v=3&s=20");
+    /*content: "Copyright (c) 2015 StarZou" url("https://avatars1.githubusercontent.com/u/4827986?v=3&s=20");*/
+    content: "Copyright (c) 2015 StarZou";
     display: block;
     margin-top: 1em;
     text-align: center;

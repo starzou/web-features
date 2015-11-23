@@ -1,5 +1,9 @@
-function loaded() {
-  console.log(this);
-}
+//function loaded() {
+//  console.log(this);
+//}
+//
+//window.onload = loaded;
 
-window.onload = loaded;
+document.onreadystatechange = function () {
+  console.log(document.readyState);
+};
