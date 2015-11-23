@@ -36,3 +36,20 @@ ol {
 @page {
     margin: 3cm;
 }
+
+.text-danger {
+    color: #FFC107;
+}
+
+.bg-img-1 {
+    background-image: url("http://img4.hao123.com/data/1_769b81ec81a431d133839cb13289dee5_510");
+    background-size: cover;
+}
+
+.lyric {
+    font-family: inherit;
+    font-style: italic;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 2em;
+}
