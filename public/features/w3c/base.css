@@ -220,6 +220,26 @@ body > *:empty {
     text-align: center;
 }
 
+.text-indent {
+    text-indent: 2em;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
 .clear-fix {
     clear: both;
 }

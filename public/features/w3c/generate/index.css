@@ -51,5 +51,10 @@ ol {
     font-style: italic;
     font-variant: small-caps;
     font-weight: bold;
-    font-size: 2em;
+    font-size: 1em;
+}
+
+.lyric-word {
+    letter-spacing: .2em;
+    word-spacing: 1em;
 }
