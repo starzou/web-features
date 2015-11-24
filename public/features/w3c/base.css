@@ -197,6 +197,7 @@ body > div:empty {
     border-radius: .3em;
     background-color: #4CAF50;
     color: #ffffff;
+    text-transform: capitalize;
     float: right;
 }
 
