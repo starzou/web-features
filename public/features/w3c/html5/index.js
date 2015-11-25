@@ -51,7 +51,7 @@ var context = {
   },
 
   onComplete: function () {
-    var progress = document.querySelector('#progress');
+    var progress = document.querySelector('#progressBar');
 
     var intervalId = setInterval(increasing, 16);
 
