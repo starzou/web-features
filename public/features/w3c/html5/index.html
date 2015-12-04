@@ -20,12 +20,30 @@
     </div>
 
     <div>
+        Storage space usage:
+        <meter value=6 max=8>6 blocks used (out of 8 total)</meter>
+        Voter turnout:
+        <meter value=0.75></meter>
+        Tickets sold:
+        <meter min="0" max="100" value="75"></meter>
+
+        <dl>
+            <dt>Radius:
+            <dd>
+                <meter min=0 max=20 value=12 title="centimeters">12cm</meter>
+            <dt>Height:
+            <dd>
+                <meter min=0 max=10 value=2 title="centimeters">2cm</meter>
+        </dl>
+    </div>
+
+    <div>
         <span class="tip">Forms</span>
 
         <form autocomplete="on" novalidate method="post"
               enctype="application/x-www-form-urlencoded"
-              action="index.html">
-            <p><label>Customer name: <input name="custname" required></label></p>
+              action="index.html" oninput="o.value = a.valueAsNumber + b.valueAsNumber">
+            <p><label>Customer name: <input name="custname" required placeholder="输入姓名"></label></p>
 
             <p><label>Telephone: <input type=tel name="custtel"></label></p>
 
@@ -84,6 +102,33 @@
             </p>
 
             <p>
+                <label for="allowedunits">Select unit types to enable on this map:</label>
+                <select id="allowedunits" name="allowedunits" multiple>
+                    <option value="1" selected> Miner</option>
+                    <option value="2" selected> Puffer</option>
+                    <option value="3" selected> Snipey</option>
+                    <option value="4" selected> Max</option>
+                    <option value="5" selected> Firebot</option>
+                </select>
+            </p>
+
+            <p>
+                <label>
+                    If you have any comments, please let us know: <textarea cols=80 name=comments>You rock!</textarea>
+                </label>
+            </p>
+
+            <p>
+                <keygen name="key"/>
+            </p>
+
+            <label>
+                <input name=a type=number step=any> +
+                <input name=b type=number step=any> =
+                <output name=o for="a b"></output>
+            </label>
+
+            <p>
                 <button type="submit" formnovalidate>Submit order</button>
             </p>
         </form>
@@ -109,7 +154,9 @@
     </div>
 
     <div>
-        <input name="sleepStart" type=time min="21:00" max="06:00" step="60" value="00:00">
+        <label>
+            Time: <input name="sleepStart" type=time min="21:00" max="06:00" step="60" value="00:00">
+        </label>
     </div>
 
     <script src="index.js"></script>
