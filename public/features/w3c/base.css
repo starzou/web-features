@@ -181,6 +181,14 @@ body > div:empty {
     width: 50%;
 }
 
+.width-full {
+    width: 100%;
+}
+
+.height-half {
+    height: 50vh;
+}
+
 .text {
     display: inline-block;
     line-height: 1em;
