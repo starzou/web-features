@@ -62,14 +62,15 @@ var context = {
         clearInterval(intervalId);
       }
     }
-  }
+  },
+  c: document.querySelector('#canvas')
 };
 
 Object.assign(window, context);
 
 document.onreadystatechange = function () {
   var readyState = document.readyState;
-  console.log(readyState);
+  log(readyState);
 
   if (readyState === 'complete') {
     context.onComplete();

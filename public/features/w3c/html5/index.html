@@ -5,12 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../base.css">
     <title>HTML5</title>
+    <script>
+        function log(type) {
+            console.log(type, Date.now());
+        }
+
+        log('head');
+    </script>
+
+    <template id="template-title">
+        <h3></h3>
+    </template>
 </head>
 <body>
+    <noscript>
+        <div class="text-center text-danger">
+            <h2>请开启JavaScript功能</h2>
+        </div>
+    </noscript>
+
     <div class="text-center text-success">
         <a href="index.html" name="titleLink">
             <h2>Study HTML5</h2>
         </a>
+    </div>
+
+    <div>
+        <canvas id="canvas" height="320" width="480"></canvas>
     </div>
 
     <div>
