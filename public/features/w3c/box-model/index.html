@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Box model</title>
     <link rel="stylesheet" href="../base.css">
+    <script>
+        var name = 'box-model';
+
+        function logWindow(name) {
+            console.log('\n');
+            console.log(name);
+            console.log(this === window);
+            console.log(window === window.top);
+            console.log(window === window.parent);
+            console.log('\n');
+        }
+
+        logWindow(name);
+    </script>
 </head>
 <body>
     <div class="title box-model">

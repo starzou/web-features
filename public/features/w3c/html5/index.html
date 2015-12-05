@@ -18,12 +18,27 @@
             color: green;
         }
     </style>
+
+    <script src="index.js"></script>
+
     <script>
         function log(type) {
             console.log(type, Date.now());
         }
 
+        function logWindow(name) {
+            console.log('\n');
+            console.log(name);
+            console.log(this === window);
+            console.log(window === window.top);
+            console.log(window === window.parent);
+            console.log('\n');
+        }
+
         log('head');
+
+        var name = 'html5';
+        logWindow(name);
     </script>
 
     <template id="template-title">
@@ -196,7 +211,5 @@
     <div>
         <iframe class="width-full height-half" src="../box-model/index.html" frameborder="0"></iframe>
     </div>
-
-    <script src="index.js"></script>
 </body>
 </html>
