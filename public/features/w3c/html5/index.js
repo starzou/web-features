@@ -62,6 +62,9 @@ var context = {
         clearInterval(intervalId);
       }
     }
+
+    document.body.onclick = eventHandler;
+    document.body.ondblclick = eventHandler;
   },
   c: document.querySelector('#canvas')
 };
@@ -91,14 +94,16 @@ window.onpagehide = eventHandler;
 
 window.onbeforeprint = eventHandler;
 
+window.onafterprint = eventHandler;
+
 window.ononline = eventHandler;
 
 window.onoffline = eventHandler;
 
-window.onbeforeunload = function (e) {
-  eventHandler(e);
-  return '是否退出?';
-};
+//window.onbeforeunload = function (e) {
+//  eventHandler(e);
+//  return '是否退出?';
+//};
 
 document.onerror = eventHandler;
 

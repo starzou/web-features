@@ -45,14 +45,14 @@
         <h3></h3>
     </template>
 </head>
-<body>
+<body accesskey="b">
     <noscript>
         <div class="text-center text-danger">
             <h2>请开启JavaScript功能</h2>
         </div>
     </noscript>
 
-    <div class="text-center text-success">
+    <div class="text-center text-success" contenteditable="true">
         <a href="index.html" name="titleLink">
             <h2>Study HTML5</h2>
         </a>
@@ -89,10 +89,10 @@
     <div>
         <span class="tip">Forms</span>
 
-        <form autocomplete="on" novalidate method="post"
+        <form autocomplete="on" method="post"
               enctype="application/x-www-form-urlencoded"
               action="index.html" oninput="o.value = a.valueAsNumber + b.valueAsNumber">
-            <p><label>Customer name: <input name="custname" required placeholder="输入姓名"></label></p>
+            <p><label>Customer name: <input name="custname" required placeholder="输入姓名" autofocus></label></p>
 
             <p><label>Telephone: <input type=tel name="custtel"></label></p>
 
@@ -178,7 +178,7 @@
             </label>
 
             <p>
-                <button type="submit" formnovalidate>Submit order</button>
+                <button type="submit" formnovalidate accesskey="s">Submit order</button>
             </p>
         </form>
     </div>
