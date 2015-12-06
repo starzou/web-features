@@ -76,3 +76,33 @@ document.onreadystatechange = function () {
     context.onComplete();
   }
 };
+
+function eventHandler(event) {
+  console.log(event.type, event);
+}
+
+window.onpopstate = eventHandler;
+
+window.onhashchange = eventHandler;
+
+window.onpageshow = eventHandler;
+
+window.onpagehide = eventHandler;
+
+window.onbeforeprint = eventHandler;
+
+window.ononline = eventHandler;
+
+window.onoffline = eventHandler;
+
+window.onbeforeunload = function (e) {
+  eventHandler(e);
+  return '是否退出?';
+};
+
+document.onerror = eventHandler;
+
+//var delay = 3000;
+//setTimeout(function () {
+//  console.log(abc);
+//}, delay);
