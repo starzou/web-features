@@ -30,15 +30,29 @@ body > div:before {
     top: -25px;
 }
 
+body > section {
+    position: relative;
+    border: 1px dashed rgba(245, 103, 96, .8);
+    display: block;
+    min-height: 2em;
+    margin-top: 2em;
+}
+
+body > section:before {
+    content: "Example: " counter(Example);
+    counter-increment: Example;
+    color: red;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: -25px;
+}
+
 .block-box {
     position: relative;
     border: 1px dashed rgba(245, 103, 96, .8);
     display: block;
     min-height: 2em;
-}
-
-body > div:empty {
-
 }
 
 .title {
