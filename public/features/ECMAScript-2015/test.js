@@ -10,7 +10,13 @@
 let Test = {
 
   defaultFunctionParameters() {
+    let fn = function (a = 1, b = 2, c = b) {
+      a = 100;
+      console.log(a, b, c);
+      console.log(arguments);
+    };
 
+    fn(10, undefined, 33);
   },
 
   arrowFunction() {
