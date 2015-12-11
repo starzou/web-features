@@ -9,6 +9,10 @@
 
 let Test = {
 
+  defaultFunctionParameters() {
+
+  },
+
   arrowFunction() {
     let array = [];
 
@@ -46,5 +50,4 @@ let Test = {
 
 };
 
-Test.arrowFunction();
-
+Luck.runTestClass(Test);

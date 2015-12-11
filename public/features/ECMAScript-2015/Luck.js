@@ -114,7 +114,17 @@ Luck._startTime = new Date().getTime();
 
     isWindow(value) {
       return value instanceof Window && value.constructor === Window;
+    },
+
+    runTestClass(testClass) {
+      for (let key in testClass) {
+        let value = testClass[key];
+        if (Luck.isFunction(value)) {
+          value();
+        }
+      }
     }
+
   });
 
 
