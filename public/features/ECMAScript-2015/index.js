@@ -60,6 +60,18 @@ function testArrowFunction() {
   console.log(array);
   console.log(arr);
   console.log(array.map(v => v * 3));
+
+  var me = {
+    name: 'StarZou',
+    hobbies: ['Code', 'Music', 'Book'],
+    printHobbies() {
+      this.hobbies.forEach(hobby => {
+        console.log(this.name + ' love ' + hobby);
+      });
+    }
+  };
+
+  me.printHobbies();
 }
 
 testArrowFunction();
