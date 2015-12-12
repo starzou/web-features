@@ -52,7 +52,11 @@ let Test = {
   },
 
   spreadOperator() {
+    let array = Luck.getRandomArrayInt();
+    console.log(array);
 
+    // with arrays, in function calls
+    console.log(Math.max(...array));
   },
 
   _arrowFunction() {

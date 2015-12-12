@@ -125,7 +125,7 @@ Luck._startTime = new Date().getTime();
     },
 
     runTestClass(testClass, skip) {
-      skip = Luck.isDefined(skip) || true;
+      skip = Luck.isDefined(skip) ? skip : true;
 
       for (let key in testClass) {
         let value = testClass[key];
@@ -138,6 +138,50 @@ Luck._startTime = new Date().getTime();
           value();
         }
       }
+    },
+
+    selectRandomItem(items) {
+      if (Luck.isArray()) {
+        return items[Math.floor(Math.random() * items.length)];
+      }
+    },
+
+    getRandomArbitrary(max, min) {
+      max = Luck.isDefined(max) ? max : 100;
+      min = Luck.isDefined(min) ? min : 0;
+
+      return Math.random() * (max - min) + min;
+    },
+
+    getRandomInt(max, min) {
+      max = Luck.isDefined(max) ? max : 100;
+      min = Luck.isDefined(min) ? min : 0;
+
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    },
+
+    getRandomArrayArbitrary(length, max, min) {
+      length = Luck.isDefined(length) ? length : 10;
+
+      let array = [], index = 0;
+
+      for (; index < length; index++) {
+        array.push(Luck.getRandomArbitrary(max, min));
+      }
+
+      return array;
+    },
+
+    getRandomArrayInt(length, max, min) {
+      length = Luck.isDefined(length) ? length : 10;
+
+      let array = [], index = 0;
+
+      for (; index < length; index++) {
+        array.push(Luck.getRandomInt(max, min));
+      }
+
+      return array;
     }
 
   });
