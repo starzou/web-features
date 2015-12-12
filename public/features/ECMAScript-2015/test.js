@@ -10,13 +10,45 @@
 let Test = {
 
   defaultFunctionParameters() {
-    let fn = function (a = 1, b = 2, c = b) {
-      a = 100;
-      console.log(a, b, c);
-      console.log(arguments);
+    //let fn = function (a = 1, b = 2, c = b) {
+    //  a = 100;
+    //  console.log(a, b, c);
+    //  console.log(arguments);
+    //};
+    //
+    //fn(10, undefined, 33);
+  },
+
+  restParameters() {
+    let fn = function (type, ...args) {
+      // change: 对象类型传的是引用, 基本类型传的是值
+      type = 'add';
+      args[0] = Luck.now() + '';
+      args[1].logType = 'warn';
+
+      console.log('type:', type);
+      console.log('args:', args, Luck.typeOf(args));// [object Array] 类型
+      console.log('arguments:', arguments);
     };
 
-    fn(10, undefined, 33);
+    fn('delete', Luck.now(), {logType: 'log'});
+
+    // length = 1
+    console.log('fn.length:', fn.length);
+
+
+    // SyntaxError: Setter function argument must not be a rest parameter at restParameters
+    try {
+      eval('({set name(...args) {console.log(args)}})');
+    } catch (e) {
+      console.log(e);
+    }
+
+    // new Function() support
+    fn = new Function('type', '...args', 'console.log(type, args);');
+
+    fn('newFunction', 1, 2, 3);
+
   },
 
   arrowFunction() {

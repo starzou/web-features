@@ -116,6 +116,14 @@ Luck._startTime = new Date().getTime();
       return value instanceof Window && value.constructor === Window;
     },
 
+    now() {
+      return Date.now();
+    },
+
+    getDate() {
+      return new Date();
+    },
+
     runTestClass(testClass) {
       for (let key in testClass) {
         let value = testClass[key];
