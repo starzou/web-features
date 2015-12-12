@@ -124,9 +124,16 @@ Luck._startTime = new Date().getTime();
       return new Date();
     },
 
-    runTestClass(testClass) {
+    runTestClass(testClass, skip) {
+      skip = Luck.isDefined(skip) || true;
+
       for (let key in testClass) {
         let value = testClass[key];
+
+        if (skip && key.startsWith('_')) {
+          continue;
+        }
+
         if (Luck.isFunction(value)) {
           value();
         }

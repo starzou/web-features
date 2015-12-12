@@ -9,7 +9,7 @@
 
 let Test = {
 
-  defaultFunctionParameters() {
+  _defaultFunctionParameters() {
     //let fn = function (a = 1, b = 2, c = b) {
     //  a = 100;
     //  console.log(a, b, c);
@@ -19,7 +19,7 @@ let Test = {
     //fn(10, undefined, 33);
   },
 
-  restParameters() {
+  _restParameters() {
     let fn = function (type, ...args) {
       // change: 对象类型传的是引用, 基本类型传的是值
       type = 'add';
@@ -51,7 +51,11 @@ let Test = {
 
   },
 
-  arrowFunction() {
+  spreadOperator() {
+
+  },
+
+  _arrowFunction() {
     let array = [];
 
     for (let index = 0; index < 10; index++) {
