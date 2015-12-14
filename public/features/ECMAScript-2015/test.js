@@ -57,6 +57,31 @@ let Test = {
 
     // with arrays, in function calls
     console.log(Math.max(...array));
+
+    // with arrays, in array literals
+    console.log([...array][0]);
+
+    // with sparse arrays, in function calls
+    var arrayCopy = Array(...array);
+    console.log(arrayCopy, arrayCopy === array);
+
+    // with sparse arrays, in array literals
+    var arrayCopy2 = [...array];
+    console.log(arrayCopy2, arrayCopy2 === array);
+
+    // with strings, in function calls
+    console.log(Math.max(...'123456'));
+
+    // with strings, in array literals
+    console.log([1, ...'23', 4, 5, 6]);
+
+    // with astral plane strings, in function calls
+    console.log(Array(...'你好啊'));
+
+    // with astral plane strings, in array literals
+    console.log([...'还不错,你呢？']);
+
+
   },
 
   _arrowFunction() {
