@@ -84,7 +84,7 @@ let Test = {
 
   },
 
-  objectLiteralExtensions: function () {
+  _objectLiteralExtensions: function () {
     // computed properties
     let propertyName = 'name';
     let name = 'StarZou';
@@ -132,9 +132,14 @@ let Test = {
         _name = value;
       }
     };
-    console.log(me.name);
     me.name = 'Super StarZou';
-    console.log(me.name);
+    console.log(me);
+    console.log(_name);
+
+  },
+
+
+  forOfLoops(){
 
   },
 
