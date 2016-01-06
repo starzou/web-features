@@ -158,6 +158,13 @@ let Test = {
     }
   },
 
+  templateStrings(){
+    let name = 'StarZou';
+    let sex = 'boy';
+    let me = `My name is ${name},I'm a ${sex.toUpperCase()}.`;
+    console.log(me);
+  },
+
   _arrowFunction() {
     let array = [];
 
