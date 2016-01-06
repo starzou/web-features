@@ -51,7 +51,7 @@ let Test = {
 
   },
 
-  spreadOperator() {
+  _spreadOperator() {
     let array = Luck.getRandomArrayInt();
     console.log(array);
 
@@ -81,6 +81,60 @@ let Test = {
     // with astral plane strings, in array literals
     console.log([...'还不错,你呢？']);
 
+
+  },
+
+  objectLiteralExtensions: function () {
+    // computed properties
+    let propertyName = 'name';
+    let name = 'StarZou';
+    let obj = {[propertyName]: 'StarZou'};
+    console.log(obj.name, obj[propertyName]);
+
+    // shorthand properties
+    let sex = 'boy';
+    let me = {
+      name, sex, showMe(){
+        console.log(this);
+      }
+    };
+    me.showMe();
+
+    // computed shorthand methods
+    let age = 22;
+    let methodName = 'showMe';
+    me = {
+      name, sex, age,
+      [methodName](){
+        console.log(this);
+      }
+    };
+    me.showMe();
+
+    // string-keyed shorthand methods
+    console.log(
+      {
+        'ab c'(){
+          console.log(this);
+          return 'called.';
+        }
+      }['ab c']()
+    );
+
+    // computed accessors
+    let _name;
+    me = {
+      get name() {
+        return 'StarZou';
+      },
+
+      set name(value) {
+        _name = value;
+      }
+    };
+    console.log(me.name);
+    me.name = 'Super StarZou';
+    console.log(me.name);
 
   },
 
