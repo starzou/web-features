@@ -158,7 +158,7 @@ let Test = {
     }
   },
 
-  templateStrings(){
+  _templateStrings(){
     let name = 'StarZou';
     let sex = 'boy';
     let me = `My name is ${name},I'm a ${sex.toUpperCase()}.`;
@@ -198,6 +198,40 @@ let Test = {
     {
 
     }
+  },
+
+  clazz(){
+    class Dog {
+
+    }
+    console.log(Dog);
+    console.log(typeof Dog);
+
+    {
+      class Dog {
+        get date() {
+          return Date.now();
+        }
+
+        showMe() {
+          console.log(this, this.date, Luck.typeOf(this));
+        }
+      }
+
+      new Dog().showMe();
+    }
+
+    class Cat {
+      constructor(name, colour) {
+        this.name = name;
+        this.colour = colour;
+        this._date = Date.now();
+      }
+    }
+
+    let hua = new Cat('小花猫', '黑白相间');
+    console.log(hua);
+
   }
 
 };
