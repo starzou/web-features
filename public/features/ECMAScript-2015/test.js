@@ -139,8 +139,23 @@ let Test = {
   },
 
 
-  forOfLoops(){
+  _forOfLoops(){
+    let array = Luck.getRandomArrayInt();
+    console.log(array);
 
+    for (let index in array) {
+      console.log(index);
+    }
+
+    let item;
+
+    for (item of array) {
+      console.log(item);
+    }
+
+    for (item of 'Hello,你好') {
+      console.log(item);
+    }
   },
 
   _arrowFunction() {
