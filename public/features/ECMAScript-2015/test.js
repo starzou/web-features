@@ -51,7 +51,7 @@ let Test = {
 
   },
 
-  spreadOperator() {
+  _spreadOperator() {
     let array = Luck.getRandomArrayInt();
     console.log(array);
 
@@ -82,6 +82,87 @@ let Test = {
     console.log([...'还不错,你呢？']);
 
 
+  },
+
+  _objectLiteralExtensions: function () {
+    // computed properties
+    let propertyName = 'name';
+    let name = 'StarZou';
+    let obj = {[propertyName]: 'StarZou'};
+    console.log(obj.name, obj[propertyName]);
+
+    // shorthand properties
+    let sex = 'boy';
+    let me = {
+      name, sex, showMe(){
+        console.log(this);
+      }
+    };
+    me.showMe();
+
+    // computed shorthand methods
+    let age = 22;
+    let methodName = 'showMe';
+    me = {
+      name, sex, age,
+      [methodName](){
+        console.log(this);
+      }
+    };
+    me.showMe();
+
+    // string-keyed shorthand methods
+    console.log(
+      {
+        'ab c'(){
+          console.log(this);
+          return 'called.';
+        }
+      }['ab c']()
+    );
+
+    // computed accessors
+    let _name;
+    me = {
+      get name() {
+        return 'StarZou';
+      },
+
+      set name(value) {
+        _name = value;
+      }
+    };
+    me.name = 'Super StarZou';
+    console.log(me);
+    console.log(_name);
+
+  },
+
+
+  _forOfLoops(){
+    let array = Luck.getRandomArrayInt();
+    console.log(array);
+
+    for (let index in array) {
+      console.log(index);
+    }
+
+    let item;
+
+    for (item of array) {
+      console.log(item);
+    }
+
+    for (item of 'Hello,你好') {
+      console.log(item);
+    }
+  },
+
+  templateStrings(){
+    let name = 'StarZou';
+    let sex = 'boy';
+    let me = `My name is ${name},I'm a ${sex.toUpperCase()}.`;
+    console.log(me);
   },
 
   _arrowFunction() {
