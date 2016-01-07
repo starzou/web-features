@@ -12,7 +12,7 @@ var router = express.Router();
  * 主页
  */
 router.get('/', function (req, res) {
-    res.redirect('/src/index.html');
+    res.redirect('/main/index.html');
 });
 
 module.exports = router;
