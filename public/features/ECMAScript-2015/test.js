@@ -41,6 +41,8 @@ let Test = {
      * 1. 类型为Array类型
      * 2. 不改变function函数的length属性
      * 3. 设置Rest Parameters的值, 不会改变arguments对象(对象类型除外)
+     * 4. 不能在Setter函数中使用restParameters
+     * 5. new Function形式可以使用
      */
 
     let fn = function (type, ...args) {
