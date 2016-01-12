@@ -18,7 +18,7 @@ let Test = {
      * 1. 未传值, 将使用默认值
      * 2. undefined不会被设置
      * 3. 默认参数可以引用其他默认参数
-     * 4. 设置参数的值, 不会改变arguments对象
+     * 4. 设置参数的值, 不会改变arguments对象(对象类型除外)
      */
 
     //let fn = function (a = c, b = 2, c = b) {
@@ -40,6 +40,7 @@ let Test = {
      * Rest Parameters(其余参数)规则：
      * 1. 类型为Array类型
      * 2. 不改变function函数的length属性
+     * 3. 设置Rest Parameters的值, 不会改变arguments对象(对象类型除外)
      */
 
     let fn = function (type, ...args) {
