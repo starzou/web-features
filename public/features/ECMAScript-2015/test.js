@@ -19,6 +19,7 @@ let Test = {
      * 2. undefined不会被设置
      * 3. 默认参数可以引用其他默认参数
      */
+
     //let fn = function (a = c, b = 2, c = b) {
     //  arguments[2].age = 22;
     //
@@ -34,6 +35,12 @@ let Test = {
 
   // 其余参数
   restParameters() {
+    /**
+     * Rest Parameters(其余参数)规则：
+     * 1. 类型为Array类型
+     * 2. 不改变function函数的length属性
+     */
+
     let fn = function (type, ...args) {
       // change: 对象类型传的是引用, 基本类型传的是值
       type = 'add';
