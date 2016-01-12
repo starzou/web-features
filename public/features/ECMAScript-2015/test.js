@@ -18,6 +18,7 @@ let Test = {
      * 1. 未传值, 将使用默认值
      * 2. undefined不会被设置
      * 3. 默认参数可以引用其他默认参数
+     * 4. 设置参数的值, 不会改变arguments对象
      */
 
     //let fn = function (a = c, b = 2, c = b) {
