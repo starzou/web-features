@@ -9,17 +9,31 @@
 
 let Test = {
 
+  // 默认函数参数
   _defaultFunctionParameters() {
-    //let fn = function (a = 1, b = 2, c = b) {
+    /**
+     * arguments对象, 表示函数被调用时实际传的参数
+     *
+     * 默认函数参数规则如下：
+     * 1. 未传值, 将使用默认值
+     * 2. undefined不会被设置
+     * 3. 默认参数可以引用其他默认参数
+     */
+    //let fn = function (a = c, b = 2, c = b) {
+    //  arguments[2].age = 22;
+    //
     //  a = 100;
+    //
     //  console.log(a, b, c);
+    //
     //  console.log(arguments);
     //};
     //
-    //fn(10, undefined, 33);
+    //fn(10, undefined, {name: 'StarZou'});
   },
 
-  _restParameters() {
+  // 其余参数
+  restParameters() {
     let fn = function (type, ...args) {
       // change: 对象类型传的是引用, 基本类型传的是值
       type = 'add';
@@ -200,7 +214,7 @@ let Test = {
     }
   },
 
-  clazz(){
+  _clazz(){
     class Dog {
 
     }
