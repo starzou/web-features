@@ -18,7 +18,7 @@ let Test = {
      * 1. 未传值, 将使用默认值
      * 2. undefined不会被设置
      * 3. 默认参数可以引用其他默认参数
-     * 4. 设置参数的值, 不会改变arguments对象(对象类型除外)
+     * 4. 设置默认参数的值, 不会改变arguments对象(对象类型除外)
      */
 
     //let fn = function (a = c, b = 2, c = b) {
@@ -35,7 +35,7 @@ let Test = {
   },
 
   // 其余参数
-  restParameters() {
+  _restParameters() {
     /**
      * Rest Parameters(其余参数)规则：
      * 1. 类型为Array类型
@@ -76,7 +76,17 @@ let Test = {
 
   },
 
+  // 展开操作符
   _spreadOperator() {
+    /**
+     * Spread Operator(展开操作符)规则：
+     * 在函数调用、字面量数组设置值时; 将数组、字符串 展开成参数列表.
+     * 如:
+     * Math.max(...[1, 2, 3]);
+     * Array(...[1, 2, 3]);
+     * var arr = [...[1, 2, 3]];
+     */
+
     let array = Luck.getRandomArrayInt();
     console.log(array);
 
@@ -105,8 +115,6 @@ let Test = {
 
     // with astral plane strings, in array literals
     console.log([...'还不错,你呢？']);
-
-
   },
 
   _objectLiteralExtensions: function () {
