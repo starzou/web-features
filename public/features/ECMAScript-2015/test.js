@@ -117,7 +117,15 @@ let Test = {
     console.log([...'还不错,你呢？']);
   },
 
+  // 字面量对象扩展
   _objectLiteralExtensions: function () {
+    /**
+     * 字面量对象扩展:
+     * 1. 动态设置对象属性名(Property Name), 通过中括号引入变量. let propertyName = 'name'; {[propertyName]: 'StarZou'};
+     * 2. 属性简写: 字面量对象在声明时, 指定其他变量. 则对象的属性名为变量名, 属性值为变量值. var name = 'StarZou', sex = 'boy', me = {name, sex};
+     * 3. 方法简写: 方法名+小括号(参数列表)+大括号(方法体)
+     */
+
     // computed properties
     let propertyName = 'name';
     let name = 'StarZou';
