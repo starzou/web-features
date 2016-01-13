@@ -179,8 +179,13 @@ let Test = {
 
   },
 
+  // for...of循环
+  forOfLoops(){
+    /**
+     * for...in 遍历每一个属性名称.
+     * for...of 遍历每一个属性值.
+     */
 
-  _forOfLoops(){
     let array = Luck.getRandomArrayInt();
     console.log(array);
 
