@@ -76,10 +76,10 @@ let Test = {
 
   },
 
-  // 展开操作符
+  // 展开运算符
   _spreadOperator() {
     /**
-     * Spread Operator(展开操作符)规则：
+     * Spread Operator(展开运算符)规则：
      * 在函数调用、字面量数组设置值时; 将数组、字符串 展开成参数列表.
      * 如:
      * Math.max(...[1, 2, 3]);
@@ -180,7 +180,7 @@ let Test = {
   },
 
   // for...of循环
-  forOfLoops(){
+  _forOfLoops(){
     /**
      * for...in 遍历每一个属性名称.
      * for...of 遍历每一个属性值.
