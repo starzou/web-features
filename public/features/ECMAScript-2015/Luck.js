@@ -50,6 +50,10 @@ Luck._startTime = new Date().getTime();
 
 
   Luck.apply(Luck, {
+    toString(value) {
+      return toString.call(value);
+    },
+
     typeOf(value) {
       return toString.call(value);
     },
