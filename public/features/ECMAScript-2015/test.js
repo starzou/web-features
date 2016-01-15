@@ -204,11 +204,21 @@ let Test = {
     }
   },
 
+  // 模板字符串
   _templateStrings(){
     let name = 'StarZou';
     let sex = 'boy';
     let me = `My name is ${name},I'm a ${sex.toUpperCase()}.`;
     console.log(me);
+  },
+
+  // 解构声明
+  destructuringDeclarations(){
+    var [a, ,[b, c], d] = [1, , [2, 3, 4], 5];
+    console.log(a, b, c, d);
+
+    var [a, ,b]='a c';
+    console.log(a, b);
   },
 
   _arrowFunction() {
