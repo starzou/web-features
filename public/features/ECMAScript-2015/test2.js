@@ -52,12 +52,16 @@ let Test2 = {
   },
 
   // 箭头函数
-  arrowFunction() {
+  _arrowFunction() {
     /**
      * 箭头函数:
      * 1. 是简写形式的函数表达式
      * 2. 拥有词法作用域的this值, this值是静态的(call, apply, bind不会改变this值)
      * 3. 箭头函数总是匿名的
+     * 4. 没有prototype属性
+     * 5. 在箭头函数里使用arguments, 指向父函数的arguments
+     * 6. super支持
+     * 7. new.target支持
      */
 
     const array = Luck.getRandomArrayInt();
@@ -100,6 +104,8 @@ let Test2 = {
     //arrowFunction = getArrowFunction();
 
     console.log(arrowFunction.length);
+    console.log(arrowFunction.prototype);
+
     console.log(arrowFunction('exec'));
     console.log(arrowFunction.call(o2));
     console.log(arrowFunction.apply(o2));
