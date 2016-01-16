@@ -9,7 +9,7 @@
 
 let Test2 = {
 
-  // 常量
+  // const 常量
   _theConst(){
     /**
      * const常量规则:
@@ -29,7 +29,8 @@ let Test2 = {
     console.log(MY_NAME);
   },
 
-  theLet(){
+  // let 变量
+  _theLet(){
     /**
      * let变量规则:
      * 1. 声明块级作用域的变量, 可选设置初始值
@@ -48,6 +49,23 @@ let Test2 = {
     }
 
     console.log('parent block scope:', typeof me);
+  },
+
+  // 箭头函数
+  arrowFunction() {
+    /**
+     * 箭头函数:
+     * 1. 是简写形式的函数表达式
+     * 2. 拥有词法作用域的this值
+     * 3. 箭头函数总是匿名的
+     */
+
+    const array = Luck.getRandomArrayInt();
+    console.log(array);
+
+    array.forEach((value, index) => {
+      console.log(index, value)
+    });
   }
 
 };

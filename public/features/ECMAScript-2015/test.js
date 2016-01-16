@@ -256,41 +256,6 @@ let Test = {
     //var b = new B(); // logs "B"
   },
 
-  _arrowFunction() {
-    let array = [];
-
-    for (let index = 0; index < 10; index++) {
-      array[index] = index;
-    }
-
-    /**
-     * 0 parameters
-     */
-    {
-      let equals = (() => array)() === array;
-      console.log(equals);
-    }
-
-    /**
-     * 1 parameter, no brackets
-     */
-    {
-      let showWord = word => {
-        console.log(word);
-        return word;
-      };
-
-      showWord('Hello World!');
-    }
-
-    /**
-     * multiple parameters
-     */
-    {
-
-    }
-  },
-
   _clazz(){
     class Dog {
 
