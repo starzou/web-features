@@ -33,7 +33,7 @@ let Test2 = {
   _theLet(){
     /**
      * let变量规则:
-     * 1. 声明块级作用域的变量, 可选设置初始值
+     * 1. 声明块级作用域的局部变量, 可选设置初始值
      * 2. 在同一作用域中, 不能声明相同的let变量名
      * 3. 必须先声明, 再使用
      */
@@ -56,16 +56,48 @@ let Test2 = {
     /**
      * 箭头函数:
      * 1. 是简写形式的函数表达式
-     * 2. 拥有词法作用域的this值
+     * 2. 拥有词法作用域的this值, this值是静态的
      * 3. 箭头函数总是匿名的
      */
 
     const array = Luck.getRandomArrayInt();
     console.log(array);
 
-    array.forEach((value, index) => {
-      console.log(index, value)
+    let array2 = array.map(value => value * 2);
+    console.log(array2);
+
+    let array3 = array.map((value, index) => {
+      //console.log(index, value);
+
+      return {
+        index: index,
+        value: value
+      };
+
     });
+    console.log(array3);
+
+    let getArrowFunction = function () {
+      return () => this;
+    };
+
+    let o1 = {
+      name: 'Object 1',
+      getArrowFunction: getArrowFunction
+    };
+
+    let o2 = {
+      name: 'Object 2'
+    };
+
+    let arrowFunction = o1.getArrowFunction();
+
+    arrowFunction = getArrowFunction();
+
+    console.log(arrowFunction());
+    console.log(arrowFunction.call(o2));
+    console.log(arrowFunction.apply(o2));
+
   }
 
 };
