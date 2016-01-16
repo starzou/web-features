@@ -56,7 +56,7 @@ let Test2 = {
     /**
      * 箭头函数:
      * 1. 是简写形式的函数表达式
-     * 2. 拥有词法作用域的this值, this值是静态的
+     * 2. 拥有词法作用域的this值, this值是静态的(call, apply, bind不会改变this值)
      * 3. 箭头函数总是匿名的
      */
 
@@ -78,7 +78,12 @@ let Test2 = {
     console.log(array3);
 
     let getArrowFunction = function () {
-      return () => this;
+
+      return (type, ...args) => {
+        console.log(type, args, arguments);
+        return this;
+      };
+
     };
 
     let o1 = {
@@ -90,13 +95,15 @@ let Test2 = {
       name: 'Object 2'
     };
 
-    let arrowFunction = o1.getArrowFunction();
+    let arrowFunction = o1.getArrowFunction('o1.getArrowFunction');
 
-    arrowFunction = getArrowFunction();
+    //arrowFunction = getArrowFunction();
 
-    console.log(arrowFunction());
+    console.log(arrowFunction.length);
+    console.log(arrowFunction('exec'));
     console.log(arrowFunction.call(o2));
     console.log(arrowFunction.apply(o2));
+    console.log(arrowFunction.bind(o2)());
 
   }
 
