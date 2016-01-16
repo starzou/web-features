@@ -213,12 +213,47 @@ let Test = {
   },
 
   // 解构声明
-  destructuringDeclarations(){
+  _destructuringDeclarations(){
     var [a, ,[b, c], d] = [1, , [2, 3, 4], 5];
     console.log(a, b, c, d);
 
     var [a, ,b]='a c';
     console.log(a, b);
+  },
+
+  _newTarget(){
+    /**
+     * 在通过new运算符被初始化的函数或构造方法中，new.target返回一个指向构造方法或函数的引用。在普通的函数调用中，new.target 的值是undefined。
+     * 在箭头函数中，new.target指向外围函数的 new.target。
+     * 在类的构造方法中，new.target指向直接被new执行的构造函数。并且当一个父类构造方法在子类构造方法中被调用时，情况与之相同。
+     */
+
+    //function F() {
+    //  console.log(new.target);
+    //}
+    //
+    //F();
+    //new F();
+
+
+    //class A {
+    //  constructor() {
+    //    console.log(new.target.name);
+    //  }
+    //}
+    //
+    //class B extends A {
+    //  constructor() {
+    //    super();
+    //
+    //    (()=> {
+    //      console.log(new.target.name);
+    //    })()
+    //  }
+    //}
+    //
+    //var a = new A(); // logs "A"
+    //var b = new B(); // logs "B"
   },
 
   _arrowFunction() {
