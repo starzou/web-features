@@ -10,14 +10,14 @@
 let Test2 = {
 
   // 常量
-  theConst(){
+  _theConst(){
     /**
-     * 常量(const)规则:
+     * const常量规则:
      * 1. 声明常量, 必须设置初始值.
      * 2. 常量不能再赋值、改变
      * 3. 常量不能再声明
      * 4. 常量拥有块作用域
-     * 5. 常量不能和它所在作用域内的其他变量或函数拥有相同的名称
+     * 5. 在同一作用域中, 不能声明相同的const常量名
      */
     const MY_NAME = 'StarZou';
 
@@ -27,6 +27,27 @@ let Test2 = {
     }
 
     console.log(MY_NAME);
+  },
+
+  theLet(){
+    /**
+     * let变量规则:
+     * 1. 声明块级作用域的变量, 可选设置初始值
+     * 2. 在同一作用域中, 不能声明相同的let变量名
+     * 3. 必须先声明, 再使用
+     */
+
+    {
+      let me = 'StarZou';
+
+      {
+        console.log('child block scope:', me);
+      }
+
+      console.log('current block scope:', me);
+    }
+
+    console.log('parent block scope:', typeof me);
   }
 
 };
