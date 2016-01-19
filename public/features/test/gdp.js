@@ -18,22 +18,31 @@ function Type(name, absoluteAmount12, yearGrowth12, absoluteAmount, yearGrowth) 
   this.absoluteAmount12 = parseFloat(absoluteAmount12) || 0;
   this.yearGrowth12 = parseFloat(yearGrowth12) || 0;
 
-  this.absoluteAmount = parseFloat(yearGrowth) || 0;
+  this.absoluteAmount = parseFloat(absoluteAmount) || 0;
   this.yearGrowth = parseFloat(yearGrowth) || 0;
 }
 
 
 var tableData = [], array = tableDataElement.children, length = array.length;
 
-var tr, text, textArray;
+var tr, cell, text, textArray, cells;
 
 for (var index = 0; index < length; index++) {
   tr = array[index];
-  text = tr.innerText;
 
-  textArray = text.split('\n');
+  textArray = [];
 
-  tableData.push(new Type(textArray[0], textArray[1], textArray[2], textArray[3], textArray[4]));
+  cells = tr.cells;
+
+  for (var j = 0; j < cells.length; j++) {
+    cell = cells[j];
+    textArray.push(cell.outerText);
+  }
+
+  if (textArray[4].indexOf('（') < 0) {
+    //console.log(textArray);
+    tableData.push(new Type(textArray[0], textArray[1], textArray[2], textArray[3], textArray[4]));
+  }
 }
 
 var me = {
@@ -43,4 +52,3 @@ var me = {
 console.log(me);
 
 console.log(JSON.stringify(me));
-

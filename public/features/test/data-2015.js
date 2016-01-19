@@ -10,3 +10,63 @@ var stringData = '{"name":"2015年12月份及全年主要统计数据","data":[{
 var jsonData = JSON.parse(stringData);
 
 console.log(jsonData);
+
+var data = jsonData.data, length = data.length, type;
+
+var yearGrowth12Array = [], yearGrowthArray = [], categoryArray = [];
+
+for (var index = 0; index < length; index++) {
+  type = data[index];
+
+  categoryArray.push(type.name);
+  yearGrowth12Array.push(type.yearGrowth12);
+  yearGrowthArray.push(type.yearGrowth);
+}
+
+
+// 基于准备好的dom，初始化echarts实例
+var myChart = echarts.init(document.getElementById('main'));
+
+var option = {
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      type: 'shadow'
+    }
+  },
+  legend: {
+    data: ['12月同比增长', '全年同比增长']
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  xAxis: [
+    {
+      type: 'category',
+      data: categoryArray
+    }
+  ],
+  yAxis: [
+    {
+      type: 'value'
+    }
+  ],
+  series: [
+    {
+      name: '12月同比增长',
+      type: 'bar',
+      data: yearGrowth12Array
+    },
+    {
+      name: '全年同比增长',
+      type: 'bar',
+      data: yearGrowthArray
+    }
+  ]
+};
+
+// 使用刚指定的配置项和数据显示图表。
+myChart.setOption(option);
