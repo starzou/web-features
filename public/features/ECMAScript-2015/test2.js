@@ -111,6 +111,51 @@ let Test2 = {
     console.log(arrowFunction.apply(o2));
     console.log(arrowFunction.bind(o2)());
 
+  },
+
+  // 类
+  classes(){
+    /**
+     * Classes类:
+     * 1. 本质上还是原型继承
+     * 2. 添加新的语法糖, 简化面向对象编程
+     */
+    class Phone {
+      constructor(name, desc, timeToMarket) {
+        this.name = name;
+        this.desc = desc;
+        this.timeToMarket = timeToMarket;
+      }
+
+      print() {
+        console.log(`Name:${this.name}\nDesc:${this.desc}\nTimeToMarket:${this.timeToMarket}\n`);
+      }
+
+      static show(obj) {
+        console.log(JSON.stringify(obj));
+      }
+    }
+
+    let iphone = new Phone('iphone6s', 'Apple iphone 6s', 2015);
+    iphone.print();
+
+    Phone.show(iphone);
+
+    //console.log(Phone.prototype);
+    //console.log(Phone.show);
+
+    class IPhone extends Phone {
+      constructor(name, desc, timeToMarket) {
+        super(name, desc, timeToMarket);
+        this.type = 'iphone';
+      }
+    }
+
+    let i6sp = new IPhone('iphone6s plus', 'Apple iphone 6s plus', 2015);
+    i6sp.print();
+
+    Phone.show(i6sp);
+
   }
 
 };
