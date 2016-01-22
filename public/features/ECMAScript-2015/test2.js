@@ -119,6 +119,8 @@ let Test2 = {
      * Classes类:
      * 1. 本质上还是原型继承
      * 2. 添加新的语法糖, 简化面向对象编程
+     * 3. 必须通过new调用
+     * 4. 方法不会被枚举
      */
     class Phone {
       constructor(name, desc, timeToMarket) {
@@ -151,10 +153,15 @@ let Test2 = {
       }
     }
 
+    IPhone.type = 'iphone';
+
     let i6sp = new IPhone('iphone6s plus', 'Apple iphone 6s plus', 2015);
+    i6sp.date = Date.now();
     i6sp.print();
 
     Phone.show(i6sp);
+
+    console.log(Object.keys(IPhone));
 
   }
 
