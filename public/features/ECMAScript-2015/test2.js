@@ -169,10 +169,14 @@ let Test2 = {
   theSuper(){
     /**
      * super:
-     * 1. 指向父对象
+     * 1. 指向函数的父对象
      * 2. 当在子类构造函数中使用时, 必须先调用super方法, 然后才能使用this
+     * 3. 子类中静态方法中, 可以通过super.method() 调用父类的静态方法
+     * 4. 子对象方法中不能删除父对象的属性, 会报引用错误
+     * 5. 不能通过super.prop = 2, 给一个只读属性赋值
      */
 
+      // 例1:
     class Polygon {
       constructor(height, width) {
         console.log('call Polygon.constructor');
@@ -212,6 +216,69 @@ let Test2 = {
     let s1 = new Square(8);
 
     console.log(s1);
+
+    s1.sayName();
+
+
+    // 例2:
+    class Human {
+      constructor() {
+      }
+
+      static ping() {
+        return 'ping';
+      }
+    }
+
+    class Computer extends Human {
+      constructor() {
+      }
+
+      static pingpong() {
+        return super.ping() + ' pong';
+      }
+    }
+
+    let value = Computer.pingpong(); // 'ping pong'
+    console.log(value);
+
+    // 例3:
+    class Base {
+      constructor() {
+      }
+
+      foo() {
+      }
+    }
+    class Derived {
+      constructor() {
+      }
+
+      delete() {
+        //delete super.foo;
+      }
+    }
+
+    new Derived().delete();
+
+    // 例4:
+    class X {
+      constructor() {
+        Object.defineProperty(this, "prop", {
+          configurable: true,
+          writable: false,
+          value: 1
+        });
+      }
+
+      f() {
+        super.prop = 2;
+      }
+    }
+
+    var x = new X();
+    x.f();
+    console.log(x.prop); // 1
 
   }
 
