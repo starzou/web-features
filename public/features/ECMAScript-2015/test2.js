@@ -114,7 +114,7 @@ let Test2 = {
   },
 
   // 类
-  classes(){
+  _classes(){
     /**
      * Classes类:
      * 1. 本质上还是原型继承
@@ -162,6 +162,56 @@ let Test2 = {
     Phone.show(i6sp);
 
     console.log(Object.keys(IPhone));
+
+  },
+
+  // super
+  theSuper(){
+    /**
+     * super:
+     * 1. 指向父对象
+     * 2. 当在子类构造函数中使用时, 必须先调用super方法, 然后才能使用this
+     */
+
+    class Polygon {
+      constructor(height, width) {
+        console.log('call Polygon.constructor');
+
+        this.name = 'Polygon';
+        this.height = height;
+        this.width = width;
+      }
+
+      sayName() {
+        console.log('Hi, I am a ', this.name + '.');
+      }
+    }
+
+    class Square extends Polygon {
+      constructor(length) {
+        //this.height; // ReferenceError, super needs to be called first!
+
+        // Here, it calls the parent class' constructor with lengths
+        // provided for the Polygon's width and height
+        super(length, length);
+
+        // Note: In derived classes, super() must be called before you
+        // can use 'this'. Leaving this out will cause a reference error.
+        this.name = 'Square';
+      }
+
+      get area() {
+        return this.height * this.width;
+      }
+
+      set area(value) {
+        this.area = value;
+      }
+    }
+
+    let s1 = new Square(8);
+
+    console.log(s1);
 
   }
 
