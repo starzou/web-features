@@ -330,7 +330,12 @@ let Test2 = {
   },
 
   // Map
-  map(){
+  _Map(){
+    /**
+     * Map:
+     * 1. 存储key-value
+     */
+
     var map = new Map();
 
     map.set('a', 1);
@@ -369,6 +374,42 @@ let Test2 = {
     map = new Map(kvArray);
     console.log(map);
 
+  },
+
+  // Set
+  Set(){
+    /**
+     * Set:
+     * 1. 存储的值是唯一的
+     * 2. 可以认为key和value是相同的
+     */
+
+    var mySet = new Set([0]);
+    mySet.add(1);
+    mySet.add(2);
+    mySet.add(2);
+    mySet.add(3);
+    mySet.add('hi');
+
+    console.log(mySet);
+    console.log(mySet.has(1));
+    console.log(mySet.size);
+
+    for (var item of mySet) {
+      console.log(item);
+    }
+
+    for (var item of mySet.keys()) {
+      console.log(item);
+    }
+
+    for (var item of mySet.values()) {
+      console.log(item);
+    }
+
+    for (var item of mySet.entries()) {
+      console.log(item);
+    }
   }
 
 };
