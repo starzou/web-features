@@ -379,7 +379,7 @@ let Test2 = {
   },
 
   // Set
-  Set(){
+  _Set(){
     /**
      * Set:
      * 1. 存储的值是唯一的
@@ -414,6 +414,84 @@ let Test2 = {
     for (var item of mySet.entries()) {
       console.log(item);
     }
+  },
+
+  // Proxy
+  _Proxy(){
+    var handler = {
+      get: function (target, name) {
+        return name in target ?
+          target[name] :
+          null;
+      }
+    };
+
+    var target = {};
+    var proxy = new Proxy(target, handler);
+
+    proxy.a = 1;
+    proxy.b = undefined;
+
+    console.log(proxy);
+    console.log(proxy.name);
+    console.log(target);
+
+
+    let validator = {
+      set: function (obj, prop, value) {
+        if (prop === 'age') {
+          if (!Number.isInteger(value)) {
+            throw new TypeError('The age is not an integer');
+          }
+          if (value > 200) {
+            throw new RangeError('The age seems invalid');
+          }
+        }
+
+        // The default behavior to store the value
+        obj[prop] = value;
+
+        return true;
+      }
+    };
+
+    let person = new Proxy({}, validator);
+
+    person.age = 100;
+    console.log(person.age); // 100
+    //person.age = 'young'; // Throws an exception
+    //person.age = 300; // Throws an exception
+  },
+
+  // Promise
+  Promise(){
+    function makePromise(success = true, delay = 1000) {
+      return new Promise(function (resolve, reject) {
+
+        setTimeout(function () {
+
+          if (success) {
+            resolve({date: Date.now(), msg: 'ok'});
+          } else {
+            reject({date: Date.now(), msg: 'error'});
+          }
+
+        }, delay);
+
+      });
+    }
+
+    var p1 = makePromise();
+
+    console.log(p1);
+
+    p1.then(function (value) {
+      console.log(value, p1);
+
+      return makePromise(false);
+    }).catch(function (reason) {
+      console.log(reason);
+    });
   }
 
 };
