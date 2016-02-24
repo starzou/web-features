@@ -283,7 +283,7 @@ let Test2 = {
   },
 
   // generators
-  generators(){
+  _generators(){
 
     // 例1:
     function* idMaker() {
@@ -327,6 +327,48 @@ let Test2 = {
     console.log(gen.next().value); // 12
     console.log(gen.next().value); // 13
     console.log(gen.next().value); // 20
+  },
+
+  // Map
+  map(){
+    var map = new Map();
+
+    map.set('a', 1);
+    map.set('b', 2);
+    map.set('c', 3);
+
+    console.log(map);
+    console.log(map.size);
+
+    // map
+    for (var [key, value] of map) {
+      console.log(key + " = " + value);
+    }
+
+    // map.keys
+    for (var key of map.keys()) {
+      console.log(key);
+    }
+
+    // map.values
+    for (var value of map.values()) {
+      console.log(value);
+    }
+
+    // map.entries
+    for (var [key, value] of map.entries()) {
+      console.log(key + " = " + value);
+    }
+
+    // map.forEach
+    map.forEach((key, value)=> {
+      console.log(key + " = " + value);
+    }, map);
+
+    var kvArray = [['d', 4], ['e', 5], ['f', 6]];
+    map = new Map(kvArray);
+    console.log(map);
+
   }
 
 };
