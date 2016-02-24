@@ -334,6 +334,8 @@ let Test2 = {
     /**
      * Map:
      * 1. 存储key-value
+     *
+     * WeakMap: key必须为对象类型
      */
 
     var map = new Map();
@@ -382,6 +384,8 @@ let Test2 = {
      * Set:
      * 1. 存储的值是唯一的
      * 2. 可以认为key和value是相同的
+     *
+     * WeakSet: 只能存储对象类型
      */
 
     var mySet = new Set([0]);
