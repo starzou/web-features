@@ -166,9 +166,9 @@ let Test2 = {
   },
 
   // super
-  theSuper(){
+  _theSuper(){
     /**
-     * super:
+     * super: 通过super, 可以子类中可以访问父类的构造函数 super()、属性 super.prop、方法super.method()
      * 1. 指向函数的父对象
      * 2. 当在子类构造函数中使用时, 必须先调用super方法, 然后才能使用this
      * 3. 子类中静态方法中, 可以通过super.method() 调用父类的静态方法
@@ -272,7 +272,7 @@ let Test2 = {
       }
 
       f() {
-        super.prop = 2;
+        //super.prop = 2;
       }
     }
 
@@ -280,6 +280,53 @@ let Test2 = {
     x.f();
     console.log(x.prop); // 1
 
+  },
+
+  // generators
+  generators(){
+
+    // 例1:
+    function* idMaker() {
+      var index = 0;
+      while (index < 3) {
+        yield index++;
+      }
+
+      return 'ok';
+    }
+
+    var gen = idMaker();
+
+    console.log(gen);
+    console.log(gen.next());
+    //console.log(gen.return());
+
+    console.log(gen.next());
+    console.log(gen.next());
+    console.log(gen.next());
+    console.log(gen.next());
+
+
+    // 例2:
+    function* anotherGenerator(i) {
+      yield i + 1;
+      yield i + 2;
+      yield i + 3;
+    }
+
+    function* generator(i) {
+      yield i;
+      yield* anotherGenerator(i);
+      yield i + 10;
+    }
+
+    var gen = generator(10);
+
+    console.log(gen.next().value); // 10
+    console.log(gen.next().value); // 11
+    console.log(gen.next().value); // 12
+    console.log(gen.next().value); // 13
+    console.log(gen.next().value); // 20
   }
 
 };
