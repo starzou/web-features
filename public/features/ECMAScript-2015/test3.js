@@ -11,7 +11,6 @@ let Test3 = {
 
   // Object静态方法
   ObjectStaticMethods(){
-
     /**
      * 语法: Object.assign(target, ...sources)
      *
@@ -21,6 +20,12 @@ let Test3 = {
      */
     var obj = Object.assign({a: 1}, {b: 2}, {c: 3});
     console.log(obj);
+
+    /**
+     * Object.is与 === 相同, 但是NaN与NaN比较是相等的, 正负0不相等
+     */
+    console.log(Object.is(NaN, NaN));
+    console.log(Object.is(0, -0));
   }
 };
 
