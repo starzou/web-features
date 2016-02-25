@@ -464,7 +464,7 @@ let Test2 = {
   },
 
   // Promise
-  Promise(){
+  _Promise(){
     function makePromise(success = true, delay = 1000) {
       return new Promise(function (resolve, reject) {
 
@@ -492,6 +492,51 @@ let Test2 = {
     }).catch(function (reason) {
       console.log(reason);
     });
+  },
+
+  // Symbol
+  Symbol(){
+    /**
+     * Symbol:
+     * 1. 符号是一个独特的和不可改变的数据类型, 并且可以用作用于对象属性的标示符
+     * 2. 不能用new调用
+     * 3. Symbol类型的属性在es6之前的代码不能被遍历(隐藏的), 通过Object.getOwnPropertySymbols(obj)获取
+     * 4. Symbol类型不能被转换成string、number
+     * 5. JSON.stringify 将忽略Symbol类型的属性
+     */
+
+    var sym1 = Symbol();
+    var sym2 = Symbol("foo");
+    var sym3 = Symbol("foo");
+
+    console.log(sym1);
+    console.log(sym2);
+    console.log(sym3);
+    console.log(typeof sym3);
+    console.log(sym2 === sym3);
+
+    console.log(Object(sym2).toString() == sym2);
+    console.log(Object(sym2).valueOf() == sym2);
+
+    var obj = {
+      name: 'a object',
+      [sym1]: 1,
+      [sym2]: 2
+    };
+
+    // 返回对象Symbol属性名的数组
+    console.log(Object.getOwnPropertySymbols(obj));
+    console.log(obj[sym1]);
+
+    console.log(Symbol);
+
+    console.log(JSON.stringify(obj));
+
+    // global symbol registry
+    var foo = Symbol.for('foo');
+    console.log(Symbol.for('foo') === foo);
+    console.log(Symbol.keyFor(foo) === 'foo');
+
   }
 
 };
