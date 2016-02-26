@@ -9,14 +9,20 @@ body {
 
 .list {
     border: 2px solid #f56268;
+
+    display: flex;
+
+    flex-flow: row wrap;
+    /*flex-flow: row-reverse wrap-reverse;*/
+
 }
 
 .item {
     height: 60px;
+    width: 300px;
     line-height: 60px;
     margin: 6px;
     color: white;
     text-align: center;
     background: #3ab8f5;
 }
-
