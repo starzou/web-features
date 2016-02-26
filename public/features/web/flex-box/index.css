@@ -1,15 +1,22 @@
-.container {
-    display: flex;
+body {
+    font-family: cursive;
 }
 
-.div-1 {
-    flex: 1;
+.center {
+    text-align: center;
+    margin: 0 auto;
 }
 
-.div-2 {
-    width: 20%;
+.list {
+    border: 2px solid #f56268;
 }
 
-.div-3 {
-    width: 50px;
+.item {
+    height: 60px;
+    line-height: 60px;
+    margin: 6px;
+    color: white;
+    text-align: center;
+    background: #3ab8f5;
 }
+
